@@ -1,0 +1,10 @@
+services:
+  api:
+    image: ghcr.io/danielsilva-loanpro/sdet-interview-challenge:latest
+    ports:
+      - '3000:3000'
+    healthcheck:
+      test: ['CMD-SHELL', 'wget -qO- http://localhost:3000/dev/users || exit 1']
+      interval: 3s
+      timeout: 3s
+      retries: 20

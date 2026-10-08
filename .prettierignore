@@ -1,0 +1,5 @@
+node_modules
+playwright-report
+reports
+package-lock.json
+spec

@@ -1,0 +1,2649 @@
+<testsuites id="" name="" tests="224" failures="59" skipped="0" errors="0" time="5.05819">
+<testsuite name="contract.spec.ts" timestamp="2026-10-08T18:13:43.815Z" hostname="dev" tests="13" failures="4" skipped="0" time="1.698" errors="0">
+<testcase name="OpenAPI contract › User schema › GET /users: every item matches User" classname="contract.spec.ts" time="0.192">
+</testcase>
+<testcase name="OpenAPI contract › User schema › POST /users 201 matches User" classname="contract.spec.ts" time="0.175">
+</testcase>
+<testcase name="OpenAPI contract › User schema › GET /users/{email} 200 matches User" classname="contract.spec.ts" time="0.192">
+</testcase>
+<testcase name="OpenAPI contract › User schema › PUT /users/{email} 200 matches User" classname="contract.spec.ts" time="0.219">
+</testcase>
+<testcase name="OpenAPI contract › ErrorResponse schema › POST /users 400" classname="contract.spec.ts" time="0.068">
+</testcase>
+<testcase name="OpenAPI contract › ErrorResponse schema › POST /users 409" classname="contract.spec.ts" time="0.288">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/contract-OpenAPI-contract--dca7e-ponse-schema-POST-users-409-dev/error-context.md]]
+]]>
+</system-out>
+<failure message="Expected HTTP 409 per OpenAPI." type="expect.toBe">
+<![CDATA[  [dev] › contract.spec.ts:60:9 › OpenAPI contract › ErrorResponse schema › POST /users 409 @contract 
+
+    Error: Expected HTTP 409 per OpenAPI.
+    POST /dev/users -> HTTP 500
+    Response body: {
+      "error": "Internal server error"
+    }
+
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 409
+    Received: 500
+
+       at ../src/support/assertions.ts:11
+
+       9 |
+      10 | export function expectStatus(res: ApiResult, expected: number): void {
+    > 11 |   expect(res.status, `Expected HTTP ${expected} per OpenAPI.\n${explain(res)}`).toBe(expected);
+         |                                                                                 ^
+      12 | }
+      13 |
+      14 | export function expectSchema(name: SchemaName, res: ApiResult): void {
+        at expectStatus (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:11:81)
+        at expectError (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:27:3)
+        at /Users/carlosveloz/Documents/Workspace/sdet-challenge/tests/contract.spec.ts:62:18
+
+    Error Context: ../test-results/contract-OpenAPI-contract--dca7e-ponse-schema-POST-users-409-dev/error-context.md
+]]>
+</failure>
+</testcase>
+<testcase name="OpenAPI contract › ErrorResponse schema › GET /users/{email} 404" classname="contract.spec.ts" time="0.158">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/contract-OpenAPI-contract--35a60--schema-GET-users-email-404-dev/error-context.md]]
+]]>
+</system-out>
+<failure message="Expected HTTP 404 per OpenAPI." type="expect.toBe">
+<![CDATA[  [dev] › contract.spec.ts:65:9 › OpenAPI contract › ErrorResponse schema › GET /users/{email} 404 @contract 
+
+    Error: Expected HTTP 404 per OpenAPI.
+    GET /dev/users/missing.d1d1e714-bdf%40example.com -> HTTP 500
+    Response body: {
+      "error": "Internal server error"
+    }
+
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 404
+    Received: 500
+
+       at ../src/support/assertions.ts:11
+
+       9 |
+      10 | export function expectStatus(res: ApiResult, expected: number): void {
+    > 11 |   expect(res.status, `Expected HTTP ${expected} per OpenAPI.\n${explain(res)}`).toBe(expected);
+         |                                                                                 ^
+      12 | }
+      13 |
+      14 | export function expectSchema(name: SchemaName, res: ApiResult): void {
+        at expectStatus (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:11:81)
+        at expectError (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:27:3)
+        at /Users/carlosveloz/Documents/Workspace/sdet-challenge/tests/contract.spec.ts:66:18
+
+    Error Context: ../test-results/contract-OpenAPI-contract--35a60--schema-GET-users-email-404-dev/error-context.md
+]]>
+</failure>
+</testcase>
+<testcase name="OpenAPI contract › ErrorResponse schema › PUT /users/{email} 400" classname="contract.spec.ts" time="0.111">
+</testcase>
+<testcase name="OpenAPI contract › ErrorResponse schema › PUT /users/{email} 404" classname="contract.spec.ts" time="0.043">
+</testcase>
+<testcase name="OpenAPI contract › ErrorResponse schema › PUT /users/{email} 409" classname="contract.spec.ts" time="0.113">
+</testcase>
+<testcase name="OpenAPI contract › ErrorResponse schema › DELETE /users/{email} 401" classname="contract.spec.ts" time="0.079">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/contract-OpenAPI-contract--ea613-hema-DELETE-users-email-401-dev/error-context.md]]
+]]>
+</system-out>
+<failure message="Expected HTTP 401 per OpenAPI." type="expect.toBe">
+<![CDATA[  [dev] › contract.spec.ts:85:9 › OpenAPI contract › ErrorResponse schema › DELETE /users/{email} 401 @contract 
+
+    Error: Expected HTTP 401 per OpenAPI.
+    DELETE /dev/users/qa.8c346407-31c%40example.com -> HTTP 204
+    Response body: (empty)
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 401
+    Received: 204
+
+       at ../src/support/assertions.ts:11
+
+       9 |
+      10 | export function expectStatus(res: ApiResult, expected: number): void {
+    > 11 |   expect(res.status, `Expected HTTP ${expected} per OpenAPI.\n${explain(res)}`).toBe(expected);
+         |                                                                                 ^
+      12 | }
+      13 |
+      14 | export function expectSchema(name: SchemaName, res: ApiResult): void {
+        at expectStatus (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:11:81)
+        at expectError (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:27:3)
+        at /Users/carlosveloz/Documents/Workspace/sdet-challenge/tests/contract.spec.ts:87:18
+
+    Error Context: ../test-results/contract-OpenAPI-contract--ea613-hema-DELETE-users-email-401-dev/error-context.md
+]]>
+</failure>
+</testcase>
+<testcase name="OpenAPI contract › ErrorResponse schema › DELETE /users/{email} 404" classname="contract.spec.ts" time="0.029">
+</testcase>
+<testcase name="OpenAPI contract › ErrorResponse schema › error message is a non-empty string" classname="contract.spec.ts" time="0.031">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/contract-OpenAPI-contract--3c862-ssage-is-a-non-empty-string-dev/error-context.md]]
+]]>
+</system-out>
+<failure message="Expected HTTP 404 per OpenAPI." type="expect.toBe">
+<![CDATA[  [dev] › contract.spec.ts:94:9 › OpenAPI contract › ErrorResponse schema › error message is a non-empty string @contract 
+
+    Error: Expected HTTP 404 per OpenAPI.
+    GET /dev/users/missing.c24b9dbf-c36%40example.com -> HTTP 500
+    Response body: {
+      "error": "Internal server error"
+    }
+
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 404
+    Received: 500
+
+       at ../src/support/assertions.ts:11
+
+       9 |
+      10 | export function expectStatus(res: ApiResult, expected: number): void {
+    > 11 |   expect(res.status, `Expected HTTP ${expected} per OpenAPI.\n${explain(res)}`).toBe(expected);
+         |                                                                                 ^
+      12 | }
+      13 |
+      14 | export function expectSchema(name: SchemaName, res: ApiResult): void {
+        at expectStatus (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:11:81)
+        at /Users/carlosveloz/Documents/Workspace/sdet-challenge/tests/contract.spec.ts:96:19
+
+    Error Context: ../test-results/contract-OpenAPI-contract--3c862-ssage-is-a-non-empty-string-dev/error-context.md
+]]>
+</failure>
+</testcase>
+</testsuite>
+<testsuite name="environment-isolation.spec.ts" timestamp="2026-10-08T18:13:43.815Z" hostname="dev" tests="6" failures="1" skipped="0" time="0.697" errors="0">
+<testcase name="environment isolation › a user created here is not visible in the other environment (GET by email)" classname="environment-isolation.spec.ts" time="0.078">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/environment-isolation-envi-1cf42-r-environment-GET-by-email--dev/error-context.md]]
+]]>
+</system-out>
+<failure message="Expected HTTP 404 per OpenAPI." type="expect.toBe">
+<![CDATA[  [dev] › environment-isolation.spec.ts:8:7 › environment isolation › a user created here is not visible in the other environment (GET by email) @isolation 
+
+    Error: Expected HTTP 404 per OpenAPI.
+    GET /prod/users/qa.b0d8f83e-6e7%40example.com -> HTTP 500
+    Response body: {
+      "error": "Internal server error"
+    }
+
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 404
+    Received: 500
+
+       at ../src/support/assertions.ts:11
+
+       9 |
+      10 | export function expectStatus(res: ApiResult, expected: number): void {
+    > 11 |   expect(res.status, `Expected HTTP ${expected} per OpenAPI.\n${explain(res)}`).toBe(expected);
+         |                                                                                 ^
+      12 | }
+      13 |
+      14 | export function expectSchema(name: SchemaName, res: ApiResult): void {
+        at expectStatus (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:11:81)
+        at expectError (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:27:3)
+        at /Users/carlosveloz/Documents/Workspace/sdet-challenge/tests/environment-isolation.spec.ts:15:16
+
+    Error Context: ../test-results/environment-isolation-envi-1cf42-r-environment-GET-by-email--dev/error-context.md
+]]>
+</failure>
+</testcase>
+<testcase name="environment isolation › a user created here is not listed in the other environment" classname="environment-isolation.spec.ts" time="0.076">
+</testcase>
+<testcase name="environment isolation › the same email can exist independently in both environments (no cross-env 409)" classname="environment-isolation.spec.ts" time="0.241">
+</testcase>
+<testcase name="environment isolation › updating a user here does not alter the same email in the other environment" classname="environment-isolation.spec.ts" time="0.177">
+</testcase>
+<testcase name="environment isolation › deleting a user here does not delete the same email in the other environment" classname="environment-isolation.spec.ts" time="0.089">
+</testcase>
+<testcase name="environment isolation › an unknown environment prefix is not served" classname="environment-isolation.spec.ts" time="0.036">
+</testcase>
+</testsuite>
+<testsuite name="users.create.spec.ts" timestamp="2026-10-08T18:13:43.815Z" hostname="dev" tests="36" failures="11" skipped="0" time="1.681" errors="0">
+<testcase name="POST /{env}/users › happy path › creates a user and returns 201 with the created resource" classname="users.create.spec.ts" time="0.089">
+</testcase>
+<testcase name="POST /{env}/users › happy path › persists the user so it can be fetched afterwards" classname="users.create.spec.ts" time="0.045">
+</testcase>
+<testcase name="POST /{env}/users › happy path › accepts boundary age 1" classname="users.create.spec.ts" time="0.034">
+</testcase>
+<testcase name="POST /{env}/users › happy path › accepts boundary age 150" classname="users.create.spec.ts" time="0.041">
+</testcase>
+<testcase name="POST /{env}/users › happy path › accepts an email with plus-addressing and subdomain" classname="users.create.spec.ts" time="0.049">
+</testcase>
+<testcase name="POST /{env}/users › validation (400) › rejects age: zero (below minimum 1)" classname="users.create.spec.ts" time="0.037">
+</testcase>
+<testcase name="POST /{env}/users › validation (400) › rejects age: negative" classname="users.create.spec.ts" time="0.031">
+</testcase>
+<testcase name="POST /{env}/users › validation (400) › rejects age: 151 (above maximum 150)" classname="users.create.spec.ts" time="0.04">
+</testcase>
+<testcase name="POST /{env}/users › validation (400) › rejects age: very large" classname="users.create.spec.ts" time="0.03">
+</testcase>
+<testcase name="POST /{env}/users › validation (400) › rejects age: float" classname="users.create.spec.ts" time="0.034">
+</testcase>
+<testcase name="POST /{env}/users › validation (400) › rejects age: numeric string" classname="users.create.spec.ts" time="0.04">
+</testcase>
+<testcase name="POST /{env}/users › validation (400) › rejects age: non-numeric string" classname="users.create.spec.ts" time="0.047">
+</testcase>
+<testcase name="POST /{env}/users › validation (400) › rejects age: null" classname="users.create.spec.ts" time="0.057">
+</testcase>
+<testcase name="POST /{env}/users › validation (400) › rejects age: boolean" classname="users.create.spec.ts" time="0.038">
+</testcase>
+<testcase name="POST /{env}/users › validation (400) › rejects email: missing domain (&quot;user@&quot;)" classname="users.create.spec.ts" time="0.073">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/users.create-POST-env-user-1b926--email-missing-domain-user--dev/error-context.md]]
+]]>
+</system-out>
+<failure message="Expected HTTP 400 per OpenAPI." type="expect.toBe">
+<![CDATA[  [dev] › users.create.spec.ts:62:11 › POST /{env}/users › validation (400) › rejects email: missing domain ("user@") 
+
+    Error: Expected HTTP 400 per OpenAPI.
+    POST /dev/users -> HTTP 201
+    Response body: {
+      "age": 30,
+      "email": "user@",
+      "name": "QA User a67cb1a6-bb6"
+    }
+
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 400
+    Received: 201
+
+       at ../src/support/assertions.ts:11
+
+       9 |
+      10 | export function expectStatus(res: ApiResult, expected: number): void {
+    > 11 |   expect(res.status, `Expected HTTP ${expected} per OpenAPI.\n${explain(res)}`).toBe(expected);
+         |                                                                                 ^
+      12 | }
+      13 |
+      14 | export function expectSchema(name: SchemaName, res: ApiResult): void {
+        at expectStatus (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:11:81)
+        at expectError (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:27:3)
+        at /Users/carlosveloz/Documents/Workspace/sdet-challenge/tests/users.create.spec.ts:65:20
+
+    Error Context: ../test-results/users.create-POST-env-user-1b926--email-missing-domain-user--dev/error-context.md
+]]>
+</failure>
+</testcase>
+<testcase name="POST /{env}/users › validation (400) › rejects email: missing &quot;@&quot; (&quot;user.domain.com&quot;)" classname="users.create.spec.ts" time="0.064">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/users.create-POST-env-user-3ecf5-il-missing-user-domain-com--dev/error-context.md]]
+]]>
+</system-out>
+<failure message="Expected HTTP 400 per OpenAPI." type="expect.toBe">
+<![CDATA[  [dev] › users.create.spec.ts:62:11 › POST /{env}/users › validation (400) › rejects email: missing "@" ("user.domain.com") 
+
+    Error: Expected HTTP 400 per OpenAPI.
+    POST /dev/users -> HTTP 201
+    Response body: {
+      "age": 30,
+      "email": "user.domain.com",
+      "name": "QA User 7acffd34-e42"
+    }
+
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 400
+    Received: 201
+
+       at ../src/support/assertions.ts:11
+
+       9 |
+      10 | export function expectStatus(res: ApiResult, expected: number): void {
+    > 11 |   expect(res.status, `Expected HTTP ${expected} per OpenAPI.\n${explain(res)}`).toBe(expected);
+         |                                                                                 ^
+      12 | }
+      13 |
+      14 | export function expectSchema(name: SchemaName, res: ApiResult): void {
+        at expectStatus (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:11:81)
+        at expectError (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:27:3)
+        at /Users/carlosveloz/Documents/Workspace/sdet-challenge/tests/users.create.spec.ts:65:20
+
+    Error Context: ../test-results/users.create-POST-env-user-3ecf5-il-missing-user-domain-com--dev/error-context.md
+]]>
+</failure>
+</testcase>
+<testcase name="POST /{env}/users › validation (400) › rejects email: missing local part" classname="users.create.spec.ts" time="0.14">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/users.create-POST-env-user-f89d2-ts-email-missing-local-part-dev/error-context.md]]
+]]>
+</system-out>
+<failure message="Expected HTTP 400 per OpenAPI." type="expect.toBe">
+<![CDATA[  [dev] › users.create.spec.ts:62:11 › POST /{env}/users › validation (400) › rejects email: missing local part 
+
+    Error: Expected HTTP 400 per OpenAPI.
+    POST /dev/users -> HTTP 201
+    Response body: {
+      "age": 30,
+      "email": "@example.com",
+      "name": "QA User b2822ba0-61f"
+    }
+
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 400
+    Received: 201
+
+       at ../src/support/assertions.ts:11
+
+       9 |
+      10 | export function expectStatus(res: ApiResult, expected: number): void {
+    > 11 |   expect(res.status, `Expected HTTP ${expected} per OpenAPI.\n${explain(res)}`).toBe(expected);
+         |                                                                                 ^
+      12 | }
+      13 |
+      14 | export function expectSchema(name: SchemaName, res: ApiResult): void {
+        at expectStatus (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:11:81)
+        at expectError (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:27:3)
+        at /Users/carlosveloz/Documents/Workspace/sdet-challenge/tests/users.create.spec.ts:65:20
+
+    Error Context: ../test-results/users.create-POST-env-user-f89d2-ts-email-missing-local-part-dev/error-context.md
+]]>
+</failure>
+</testcase>
+<testcase name="POST /{env}/users › validation (400) › rejects email: double &quot;@&quot;" classname="users.create.spec.ts" time="0.053">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/users.create-POST-env-user-727ae-n-400-rejects-email-double--dev/error-context.md]]
+]]>
+</system-out>
+<failure message="Expected HTTP 400 per OpenAPI." type="expect.toBe">
+<![CDATA[  [dev] › users.create.spec.ts:62:11 › POST /{env}/users › validation (400) › rejects email: double "@" 
+
+    Error: Expected HTTP 400 per OpenAPI.
+    POST /dev/users -> HTTP 201
+    Response body: {
+      "age": 30,
+      "email": "user@@example.com",
+      "name": "QA User c6d8404c-b49"
+    }
+
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 400
+    Received: 201
+
+       at ../src/support/assertions.ts:11
+
+       9 |
+      10 | export function expectStatus(res: ApiResult, expected: number): void {
+    > 11 |   expect(res.status, `Expected HTTP ${expected} per OpenAPI.\n${explain(res)}`).toBe(expected);
+         |                                                                                 ^
+      12 | }
+      13 |
+      14 | export function expectSchema(name: SchemaName, res: ApiResult): void {
+        at expectStatus (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:11:81)
+        at expectError (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:27:3)
+        at /Users/carlosveloz/Documents/Workspace/sdet-challenge/tests/users.create.spec.ts:65:20
+
+    Error Context: ../test-results/users.create-POST-env-user-727ae-n-400-rejects-email-double--dev/error-context.md
+]]>
+</failure>
+</testcase>
+<testcase name="POST /{env}/users › validation (400) › rejects email: contains whitespace" classname="users.create.spec.ts" time="0.026">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/users.create-POST-env-user-0c1f1-s-email-contains-whitespace-dev/error-context.md]]
+]]>
+</system-out>
+<failure message="Expected HTTP 400 per OpenAPI." type="expect.toBe">
+<![CDATA[  [dev] › users.create.spec.ts:62:11 › POST /{env}/users › validation (400) › rejects email: contains whitespace 
+
+    Error: Expected HTTP 400 per OpenAPI.
+    POST /dev/users -> HTTP 201
+    Response body: {
+      "age": 30,
+      "email": "us er@example.com",
+      "name": "QA User 87c5d568-89f"
+    }
+
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 400
+    Received: 201
+
+       at ../src/support/assertions.ts:11
+
+       9 |
+      10 | export function expectStatus(res: ApiResult, expected: number): void {
+    > 11 |   expect(res.status, `Expected HTTP ${expected} per OpenAPI.\n${explain(res)}`).toBe(expected);
+         |                                                                                 ^
+      12 | }
+      13 |
+      14 | export function expectSchema(name: SchemaName, res: ApiResult): void {
+        at expectStatus (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:11:81)
+        at expectError (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:27:3)
+        at /Users/carlosveloz/Documents/Workspace/sdet-challenge/tests/users.create.spec.ts:65:20
+
+    Error Context: ../test-results/users.create-POST-env-user-0c1f1-s-email-contains-whitespace-dev/error-context.md
+]]>
+</failure>
+</testcase>
+<testcase name="POST /{env}/users › validation (400) › rejects email: empty string" classname="users.create.spec.ts" time="0.036">
+</testcase>
+<testcase name="POST /{env}/users › validation (400) › rejects email: number" classname="users.create.spec.ts" time="0.044">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/users.create-POST-env-user-2a408-on-400-rejects-email-number-dev/error-context.md]]
+]]>
+</system-out>
+<failure message="Expected HTTP 400 per OpenAPI." type="expect.toBe">
+<![CDATA[  [dev] › users.create.spec.ts:62:11 › POST /{env}/users › validation (400) › rejects email: number 
+
+    Error: Expected HTTP 400 per OpenAPI.
+    POST /dev/users -> HTTP 201
+    Response body: {
+      "age": 30,
+      "email": 12345,
+      "name": "QA User 568eeb59-e1f"
+    }
+
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 400
+    Received: 201
+
+       at ../src/support/assertions.ts:11
+
+       9 |
+      10 | export function expectStatus(res: ApiResult, expected: number): void {
+    > 11 |   expect(res.status, `Expected HTTP ${expected} per OpenAPI.\n${explain(res)}`).toBe(expected);
+         |                                                                                 ^
+      12 | }
+      13 |
+      14 | export function expectSchema(name: SchemaName, res: ApiResult): void {
+        at expectStatus (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:11:81)
+        at expectError (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:27:3)
+        at /Users/carlosveloz/Documents/Workspace/sdet-challenge/tests/users.create.spec.ts:65:20
+
+    Error Context: ../test-results/users.create-POST-env-user-2a408-on-400-rejects-email-number-dev/error-context.md
+]]>
+</failure>
+</testcase>
+<testcase name="POST /{env}/users › validation (400) › rejects email: null" classname="users.create.spec.ts" time="0.035">
+</testcase>
+<testcase name="POST /{env}/users › validation (400) › rejects name: number" classname="users.create.spec.ts" time="0.06">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/users.create-POST-env-user-5bad1-ion-400-rejects-name-number-dev/error-context.md]]
+]]>
+</system-out>
+<failure message="Expected HTTP 400 per OpenAPI." type="expect.toBe">
+<![CDATA[  [dev] › users.create.spec.ts:70:11 › POST /{env}/users › validation (400) › rejects name: number ─
+
+    Error: Expected HTTP 400 per OpenAPI.
+    POST /dev/users -> HTTP 201
+    Response body: {
+      "age": 30,
+      "email": "qa.5351df14-db1@example.com",
+      "name": 123
+    }
+
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 400
+    Received: 201
+
+       at ../src/support/assertions.ts:11
+
+       9 |
+      10 | export function expectStatus(res: ApiResult, expected: number): void {
+    > 11 |   expect(res.status, `Expected HTTP ${expected} per OpenAPI.\n${explain(res)}`).toBe(expected);
+         |                                                                                 ^
+      12 | }
+      13 |
+      14 | export function expectSchema(name: SchemaName, res: ApiResult): void {
+        at expectStatus (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:11:81)
+        at expectError (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:27:3)
+        at /Users/carlosveloz/Documents/Workspace/sdet-challenge/tests/users.create.spec.ts:74:20
+
+    Error Context: ../test-results/users.create-POST-env-user-5bad1-ion-400-rejects-name-number-dev/error-context.md
+]]>
+</failure>
+</testcase>
+<testcase name="POST /{env}/users › validation (400) › rejects name: null" classname="users.create.spec.ts" time="0.021">
+</testcase>
+<testcase name="POST /{env}/users › validation (400) › rejects name: boolean" classname="users.create.spec.ts" time="0.027">
+</testcase>
+<testcase name="POST /{env}/users › validation (400) › rejects name: object" classname="users.create.spec.ts" time="0.025">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/users.create-POST-env-user-b935d-ion-400-rejects-name-object-dev/error-context.md]]
+]]>
+</system-out>
+<failure message="Expected HTTP 400 per OpenAPI." type="expect.toBe">
+<![CDATA[  [dev] › users.create.spec.ts:70:11 › POST /{env}/users › validation (400) › rejects name: object ─
+
+    Error: Expected HTTP 400 per OpenAPI.
+    POST /dev/users -> HTTP 500
+    Response body: {
+      "error": "Internal server error"
+    }
+
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 400
+    Received: 500
+
+       at ../src/support/assertions.ts:11
+
+       9 |
+      10 | export function expectStatus(res: ApiResult, expected: number): void {
+    > 11 |   expect(res.status, `Expected HTTP ${expected} per OpenAPI.\n${explain(res)}`).toBe(expected);
+         |                                                                                 ^
+      12 | }
+      13 |
+      14 | export function expectSchema(name: SchemaName, res: ApiResult): void {
+        at expectStatus (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:11:81)
+        at expectError (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:27:3)
+        at /Users/carlosveloz/Documents/Workspace/sdet-challenge/tests/users.create.spec.ts:74:20
+
+    Error Context: ../test-results/users.create-POST-env-user-b935d-ion-400-rejects-name-object-dev/error-context.md
+]]>
+</failure>
+</testcase>
+<testcase name="POST /{env}/users › validation (400) › rejects a body without &quot;name&quot;" classname="users.create.spec.ts" time="0.048">
+</testcase>
+<testcase name="POST /{env}/users › validation (400) › rejects a body without &quot;email&quot;" classname="users.create.spec.ts" time="0.02">
+</testcase>
+<testcase name="POST /{env}/users › validation (400) › rejects a body without &quot;age&quot;" classname="users.create.spec.ts" time="0.054">
+</testcase>
+<testcase name="POST /{env}/users › validation (400) › rejects an empty object" classname="users.create.spec.ts" time="0.012">
+</testcase>
+<testcase name="POST /{env}/users › validation (400) › rejects a request without body" classname="users.create.spec.ts" time="0.009">
+</testcase>
+<testcase name="POST /{env}/users › validation (400) › rejects malformed JSON" classname="users.create.spec.ts" time="0.01">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/users.create-POST-env-user-7ef0b--400-rejects-malformed-JSON-dev/error-context.md]]
+]]>
+</system-out>
+<failure message="Expected HTTP 400 per OpenAPI." type="expect.toBe">
+<![CDATA[  [dev] › users.create.spec.ts:96:9 › POST /{env}/users › validation (400) › rejects malformed JSON 
+
+    Error: Expected HTTP 400 per OpenAPI.
+    POST /dev/users -> HTTP 500
+    Response body: {
+      "error": "Internal server error"
+    }
+
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 400
+    Received: 500
+
+       at ../src/support/assertions.ts:11
+
+       9 |
+      10 | export function expectStatus(res: ApiResult, expected: number): void {
+    > 11 |   expect(res.status, `Expected HTTP ${expected} per OpenAPI.\n${explain(res)}`).toBe(expected);
+         |                                                                                 ^
+      12 | }
+      13 |
+      14 | export function expectSchema(name: SchemaName, res: ApiResult): void {
+        at expectStatus (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:11:81)
+        at expectError (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:27:3)
+        at /Users/carlosveloz/Documents/Workspace/sdet-challenge/tests/users.create.spec.ts:97:18
+
+    Error Context: ../test-results/users.create-POST-env-user-7ef0b--400-rejects-malformed-JSON-dev/error-context.md
+]]>
+</failure>
+</testcase>
+<testcase name="POST /{env}/users › validation (400) › does not persist a user that failed validation" classname="users.create.spec.ts" time="0.074">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/users.create-POST-env-user-a8622-user-that-failed-validation-dev/error-context.md]]
+]]>
+</system-out>
+<failure message="Expected HTTP 404 per OpenAPI." type="expect.toBe">
+<![CDATA[  [dev] › users.create.spec.ts:100:9 › POST /{env}/users › validation (400) › does not persist a user that failed validation 
+
+    Error: Expected HTTP 404 per OpenAPI.
+    GET /dev/users/qa.fc634649-eb7%40example.com -> HTTP 500
+    Response body: {
+      "error": "Internal server error"
+    }
+
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 404
+    Received: 500
+
+       at ../src/support/assertions.ts:11
+
+       9 |
+      10 | export function expectStatus(res: ApiResult, expected: number): void {
+    > 11 |   expect(res.status, `Expected HTTP ${expected} per OpenAPI.\n${explain(res)}`).toBe(expected);
+         |                                                                                 ^
+      12 | }
+      13 |
+      14 | export function expectSchema(name: SchemaName, res: ApiResult): void {
+        at expectStatus (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:11:81)
+        at /Users/carlosveloz/Documents/Workspace/sdet-challenge/tests/users.create.spec.ts:104:19
+
+    Error Context: ../test-results/users.create-POST-env-user-a8622-user-that-failed-validation-dev/error-context.md
+]]>
+</failure>
+</testcase>
+<testcase name="POST /{env}/users › duplicates (409) › rejects a second user with the same email" classname="users.create.spec.ts" time="0.077">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/users.create-POST-env-user-41f14-nd-user-with-the-same-email-dev/error-context.md]]
+]]>
+</system-out>
+<failure message="Expected HTTP 409 per OpenAPI." type="expect.toBe">
+<![CDATA[  [dev] › users.create.spec.ts:109:9 › POST /{env}/users › duplicates (409) › rejects a second user with the same email 
+
+    Error: Expected HTTP 409 per OpenAPI.
+    POST /dev/users -> HTTP 500
+    Response body: {
+      "error": "Internal server error"
+    }
+
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 409
+    Received: 500
+
+       at ../src/support/assertions.ts:11
+
+       9 |
+      10 | export function expectStatus(res: ApiResult, expected: number): void {
+    > 11 |   expect(res.status, `Expected HTTP ${expected} per OpenAPI.\n${explain(res)}`).toBe(expected);
+         |                                                                                 ^
+      12 | }
+      13 |
+      14 | export function expectSchema(name: SchemaName, res: ApiResult): void {
+        at expectStatus (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:11:81)
+        at expectError (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:27:3)
+        at /Users/carlosveloz/Documents/Workspace/sdet-challenge/tests/users.create.spec.ts:112:18
+
+    Error Context: ../test-results/users.create-POST-env-user-41f14-nd-user-with-the-same-email-dev/error-context.md
+]]>
+</failure>
+</testcase>
+<testcase name="POST /{env}/users › duplicates (409) › keeps the original user untouched after a rejected duplicate" classname="users.create.spec.ts" time="0.082">
+</testcase>
+<testcase name="POST /{env}/users › duplicates (409) › allows re-using an email after the user was deleted" classname="users.create.spec.ts" time="0.079">
+</testcase>
+</testsuite>
+<testsuite name="users.delete.spec.ts" timestamp="2026-10-08T18:13:43.815Z" hostname="dev" tests="11" failures="7" skipped="0" time="0.879" errors="0">
+<testcase name="DELETE /{env}/users/{email} › happy path › deletes a user with a valid token and returns 204 without body" classname="users.delete.spec.ts" time="0.061">
+</testcase>
+<testcase name="DELETE /{env}/users/{email} › happy path › the user is no longer retrievable afterwards" classname="users.delete.spec.ts" time="0.099">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/users.delete-DELETE-env-us-73153-nger-retrievable-afterwards-dev/error-context.md]]
+]]>
+</system-out>
+<failure message="Expected HTTP 404 per OpenAPI." type="expect.toBe">
+<![CDATA[  [dev] › users.delete.spec.ts:18:9 › DELETE /{env}/users/{email} › happy path › the user is no longer retrievable afterwards 
+
+    Error: Expected HTTP 404 per OpenAPI.
+    GET /dev/users/qa.223bbc27-43a%40example.com -> HTTP 500
+    Response body: {
+      "error": "Internal server error"
+    }
+
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 404
+    Received: 500
+
+       at ../src/support/assertions.ts:11
+
+       9 |
+      10 | export function expectStatus(res: ApiResult, expected: number): void {
+    > 11 |   expect(res.status, `Expected HTTP ${expected} per OpenAPI.\n${explain(res)}`).toBe(expected);
+         |                                                                                 ^
+      12 | }
+      13 |
+      14 | export function expectSchema(name: SchemaName, res: ApiResult): void {
+        at expectStatus (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:11:81)
+        at expectError (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:27:3)
+        at /Users/carlosveloz/Documents/Workspace/sdet-challenge/tests/users.delete.spec.ts:21:18
+
+    Error Context: ../test-results/users.delete-DELETE-env-us-73153-nger-retrievable-afterwards-dev/error-context.md
+]]>
+</failure>
+</testcase>
+<testcase name="DELETE /{env}/users/{email} › happy path › deleting twice returns 404 the second time" classname="users.delete.spec.ts" time="0.08">
+</testcase>
+<testcase name="DELETE /{env}/users/{email} › happy path › only the targeted user is removed" classname="users.delete.spec.ts" time="0.128">
+</testcase>
+<testcase name="DELETE /{env}/users/{email} › authentication (401) › rejects a request without the Authentication header" classname="users.delete.spec.ts" time="0.072">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/users.delete-DELETE-env-us-aeb99-t-the-Authentication-header-dev/error-context.md]]
+]]>
+</system-out>
+<failure message="Expected HTTP 401 per OpenAPI." type="expect.toBe">
+<![CDATA[  [dev] › users.delete.spec.ts:39:9 › DELETE /{env}/users/{email} › authentication (401) › rejects a request without the Authentication header @auth 
+
+    Error: Expected HTTP 401 per OpenAPI.
+    DELETE /dev/users/qa.adf3f436-ddf%40example.com -> HTTP 204
+    Response body: (empty)
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 401
+    Received: 204
+
+       at ../src/support/assertions.ts:11
+
+       9 |
+      10 | export function expectStatus(res: ApiResult, expected: number): void {
+    > 11 |   expect(res.status, `Expected HTTP ${expected} per OpenAPI.\n${explain(res)}`).toBe(expected);
+         |                                                                                 ^
+      12 | }
+      13 |
+      14 | export function expectSchema(name: SchemaName, res: ApiResult): void {
+        at expectStatus (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:11:81)
+        at expectError (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:27:3)
+        at /Users/carlosveloz/Documents/Workspace/sdet-challenge/tests/users.delete.spec.ts:41:18
+
+    Error Context: ../test-results/users.delete-DELETE-env-us-aeb99-t-the-Authentication-header-dev/error-context.md
+]]>
+</failure>
+</testcase>
+<testcase name="DELETE /{env}/users/{email} › authentication (401) › rejects an invalid token" classname="users.delete.spec.ts" time="0.054">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/users.delete-DELETE-env-us-c04f3-01-rejects-an-invalid-token-dev/error-context.md]]
+]]>
+</system-out>
+<failure message="Expected HTTP 401 per OpenAPI." type="expect.toBe">
+<![CDATA[  [dev] › users.delete.spec.ts:44:9 › DELETE /{env}/users/{email} › authentication (401) › rejects an invalid token @auth 
+
+    Error: Expected HTTP 401 per OpenAPI.
+    DELETE /dev/users/qa.919a993b-cf7%40example.com -> HTTP 204
+    Response body: (empty)
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 401
+    Received: 204
+
+       at ../src/support/assertions.ts:11
+
+       9 |
+      10 | export function expectStatus(res: ApiResult, expected: number): void {
+    > 11 |   expect(res.status, `Expected HTTP ${expected} per OpenAPI.\n${explain(res)}`).toBe(expected);
+         |                                                                                 ^
+      12 | }
+      13 |
+      14 | export function expectSchema(name: SchemaName, res: ApiResult): void {
+        at expectStatus (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:11:81)
+        at expectError (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:27:3)
+        at /Users/carlosveloz/Documents/Workspace/sdet-challenge/tests/users.delete.spec.ts:46:18
+
+    Error Context: ../test-results/users.delete-DELETE-env-us-c04f3-01-rejects-an-invalid-token-dev/error-context.md
+]]>
+</failure>
+</testcase>
+<testcase name="DELETE /{env}/users/{email} › authentication (401) › rejects an empty token" classname="users.delete.spec.ts" time="0.096">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/users.delete-DELETE-env-us-60e21--401-rejects-an-empty-token-dev/error-context.md]]
+]]>
+</system-out>
+<failure message="Expected HTTP 401 per OpenAPI." type="expect.toBe">
+<![CDATA[  [dev] › users.delete.spec.ts:49:9 › DELETE /{env}/users/{email} › authentication (401) › rejects an empty token @auth 
+
+    Error: Expected HTTP 401 per OpenAPI.
+    DELETE /dev/users/qa.18bdf862-839%40example.com -> HTTP 204
+    Response body: (empty)
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 401
+    Received: 204
+
+       at ../src/support/assertions.ts:11
+
+       9 |
+      10 | export function expectStatus(res: ApiResult, expected: number): void {
+    > 11 |   expect(res.status, `Expected HTTP ${expected} per OpenAPI.\n${explain(res)}`).toBe(expected);
+         |                                                                                 ^
+      12 | }
+      13 |
+      14 | export function expectSchema(name: SchemaName, res: ApiResult): void {
+        at expectStatus (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:11:81)
+        at expectError (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:27:3)
+        at /Users/carlosveloz/Documents/Workspace/sdet-challenge/tests/users.delete.spec.ts:51:18
+
+    Error Context: ../test-results/users.delete-DELETE-env-us-60e21--401-rejects-an-empty-token-dev/error-context.md
+]]>
+</failure>
+</testcase>
+<testcase name="DELETE /{env}/users/{email} › authentication (401) › rejects a token with different casing" classname="users.delete.spec.ts" time="0.082">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/users.delete-DELETE-env-us-08d97-token-with-different-casing-dev/error-context.md]]
+]]>
+</system-out>
+<failure message="Expected HTTP 401 per OpenAPI." type="expect.toBe">
+<![CDATA[  [dev] › users.delete.spec.ts:54:9 › DELETE /{env}/users/{email} › authentication (401) › rejects a token with different casing @auth 
+
+    Error: Expected HTTP 401 per OpenAPI.
+    DELETE /dev/users/qa.62e240f6-1bc%40example.com -> HTTP 204
+    Response body: (empty)
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 401
+    Received: 204
+
+       at ../src/support/assertions.ts:11
+
+       9 |
+      10 | export function expectStatus(res: ApiResult, expected: number): void {
+    > 11 |   expect(res.status, `Expected HTTP ${expected} per OpenAPI.\n${explain(res)}`).toBe(expected);
+         |                                                                                 ^
+      12 | }
+      13 |
+      14 | export function expectSchema(name: SchemaName, res: ApiResult): void {
+        at expectStatus (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:11:81)
+        at expectError (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:27:3)
+        at /Users/carlosveloz/Documents/Workspace/sdet-challenge/tests/users.delete.spec.ts:56:18
+
+    Error Context: ../test-results/users.delete-DELETE-env-us-08d97-token-with-different-casing-dev/error-context.md
+]]>
+</failure>
+</testcase>
+<testcase name="DELETE /{env}/users/{email} › authentication (401) › rejects a valid token sent in the wrong header (Authorization)" classname="users.delete.spec.ts" time="0.038">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/users.delete-DELETE-env-us-b55e8-wrong-header-Authorization--dev/error-context.md]]
+]]>
+</system-out>
+<failure message="Expected HTTP 401 per OpenAPI." type="expect.toBe">
+<![CDATA[  [dev] › users.delete.spec.ts:59:9 › DELETE /{env}/users/{email} › authentication (401) › rejects a valid token sent in the wrong header (Authorization) @auth 
+
+    Error: Expected HTTP 401 per OpenAPI.
+    DELETE /dev/users/qa.08fa668e-92c%40example.com -> HTTP 204
+    Response body: (empty)
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 401
+    Received: 204
+
+       at ../src/support/assertions.ts:11
+
+       9 |
+      10 | export function expectStatus(res: ApiResult, expected: number): void {
+    > 11 |   expect(res.status, `Expected HTTP ${expected} per OpenAPI.\n${explain(res)}`).toBe(expected);
+         |                                                                                 ^
+      12 | }
+      13 |
+      14 | export function expectSchema(name: SchemaName, res: ApiResult): void {
+        at expectStatus (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:11:81)
+        at expectError (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:27:3)
+        at /Users/carlosveloz/Documents/Workspace/sdet-challenge/tests/users.delete.spec.ts:66:18
+
+    Error Context: ../test-results/users.delete-DELETE-env-us-b55e8-wrong-header-Authorization--dev/error-context.md
+]]>
+</failure>
+</testcase>
+<testcase name="DELETE /{env}/users/{email} › authentication (401) › a rejected request does not delete the user" classname="users.delete.spec.ts" time="0.126">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/users.delete-DELETE-env-us-ad829-st-does-not-delete-the-user-dev/error-context.md]]
+]]>
+</system-out>
+<failure message="Expected HTTP 200 per OpenAPI." type="expect.toBe">
+<![CDATA[  [dev] › users.delete.spec.ts:69:9 › DELETE /{env}/users/{email} › authentication (401) › a rejected request does not delete the user @auth 
+
+    Error: Expected HTTP 200 per OpenAPI.
+    GET /dev/users/qa.cc5aa175-395%40example.com -> HTTP 500
+    Response body: {
+      "error": "Internal server error"
+    }
+
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 500
+
+       at ../src/support/assertions.ts:11
+
+       9 |
+      10 | export function expectStatus(res: ApiResult, expected: number): void {
+    > 11 |   expect(res.status, `Expected HTTP ${expected} per OpenAPI.\n${explain(res)}`).toBe(expected);
+         |                                                                                 ^
+      12 | }
+      13 |
+      14 | export function expectSchema(name: SchemaName, res: ApiResult): void {
+        at expectStatus (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:11:81)
+        at /Users/carlosveloz/Documents/Workspace/sdet-challenge/tests/users.delete.spec.ts:75:19
+
+    Error Context: ../test-results/users.delete-DELETE-env-us-ad829-st-does-not-delete-the-user-dev/error-context.md
+]]>
+</failure>
+</testcase>
+<testcase name="DELETE /{env}/users/{email} › not found (404) › returns 404 for an unknown email with a valid token" classname="users.delete.spec.ts" time="0.043">
+</testcase>
+</testsuite>
+<testsuite name="users.get.spec.ts" timestamp="2026-10-08T18:13:43.815Z" hostname="dev" tests="5" failures="2" skipped="0" time="0.277" errors="0">
+<testcase name="GET /{env}/users/{email} › returns 200 and the requested user" classname="users.get.spec.ts" time="0.052">
+</testcase>
+<testcase name="GET /{env}/users/{email} › resolves emails containing &quot;+&quot; (URL-encoded)" classname="users.get.spec.ts" time="0.065">
+</testcase>
+<testcase name="GET /{env}/users/{email} › returns 404 with an ErrorResponse for an unknown email" classname="users.get.spec.ts" time="0.02">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/users.get-GET-env-users-em-5203a-sponse-for-an-unknown-email-dev/error-context.md]]
+]]>
+</system-out>
+<failure message="Expected HTTP 404 per OpenAPI." type="expect.toBe">
+<![CDATA[  [dev] › users.get.spec.ts:21:7 › GET /{env}/users/{email} › returns 404 with an ErrorResponse for an unknown email 
+
+    Error: Expected HTTP 404 per OpenAPI.
+    GET /dev/users/missing.179d28fc-93b%40example.com -> HTTP 500
+    Response body: {
+      "error": "Internal server error"
+    }
+
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 404
+    Received: 500
+
+       at ../src/support/assertions.ts:11
+
+       9 |
+      10 | export function expectStatus(res: ApiResult, expected: number): void {
+    > 11 |   expect(res.status, `Expected HTTP ${expected} per OpenAPI.\n${explain(res)}`).toBe(expected);
+         |                                                                                 ^
+      12 | }
+      13 |
+      14 | export function expectSchema(name: SchemaName, res: ApiResult): void {
+        at expectStatus (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:11:81)
+        at expectError (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:27:3)
+        at /Users/carlosveloz/Documents/Workspace/sdet-challenge/tests/users.get.spec.ts:22:16
+
+    Error Context: ../test-results/users.get-GET-env-users-em-5203a-sponse-for-an-unknown-email-dev/error-context.md
+]]>
+</failure>
+</testcase>
+<testcase name="GET /{env}/users/{email} › returns 404 for a deleted user" classname="users.get.spec.ts" time="0.088">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/users.get-GET-env-users-email-returns-404-for-a-deleted-user-dev/error-context.md]]
+]]>
+</system-out>
+<failure message="Expected HTTP 404 per OpenAPI." type="expect.toBe">
+<![CDATA[  [dev] › users.get.spec.ts:25:7 › GET /{env}/users/{email} › returns 404 for a deleted user ───────
+
+    Error: Expected HTTP 404 per OpenAPI.
+    GET /dev/users/qa.1e37ff97-e6b%40example.com -> HTTP 500
+    Response body: {
+      "error": "Internal server error"
+    }
+
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 404
+    Received: 500
+
+       at ../src/support/assertions.ts:11
+
+       9 |
+      10 | export function expectStatus(res: ApiResult, expected: number): void {
+    > 11 |   expect(res.status, `Expected HTTP ${expected} per OpenAPI.\n${explain(res)}`).toBe(expected);
+         |                                                                                 ^
+      12 | }
+      13 |
+      14 | export function expectSchema(name: SchemaName, res: ApiResult): void {
+        at expectStatus (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:11:81)
+        at expectError (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:27:3)
+        at /Users/carlosveloz/Documents/Workspace/sdet-challenge/tests/users.get.spec.ts:28:16
+
+    Error Context: ../test-results/users.get-GET-env-users-email-returns-404-for-a-deleted-user-dev/error-context.md
+]]>
+</failure>
+</testcase>
+<testcase name="GET /{env}/users/{email} › does not require authentication" classname="users.get.spec.ts" time="0.052">
+</testcase>
+</testsuite>
+<testsuite name="users.list.spec.ts" timestamp="2026-10-08T18:13:43.815Z" hostname="dev" tests="5" failures="1" skipped="0" time="0.344" errors="0">
+<testcase name="GET /{env}/users › returns 200 and a JSON array" classname="users.list.spec.ts" time="0.043">
+</testcase>
+<testcase name="GET /{env}/users › includes a newly created user" classname="users.list.spec.ts" time="0.072">
+</testcase>
+<testcase name="GET /{env}/users › does not include a deleted user" classname="users.list.spec.ts" time="0.109">
+</testcase>
+<testcase name="GET /{env}/users › reflects updates made via PUT" classname="users.list.spec.ts" time="0.078">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/users.list-GET-env-users-reflects-updates-made-via-PUT-dev/error-context.md]]
+]]>
+</system-out>
+<failure message="GET /dev/users -&gt; HTTP 200" type="expect.toContainEqual">
+<![CDATA[  [dev] › users.list.spec.ts:28:7 › GET /{env}/users › reflects updates made via PUT ───────────────
+
+    Error: GET /dev/users -> HTTP 200
+    Response body: [
+      {
+        "age": 30,
+        "email": "12345",
+        "name": "QA User 568eeb59-e1f"
+      },
+      {
+        "age": 30,
+        "email": "qa.d24f1577-f19@example.com",
+        "name": "QA User d24f1577-f19"
+      },
+      {
+        "age": 30,
+        "email": "qa.bc6fbf38-b98@example.com",
+        "name": "QA User bc6fbf38-b98"
+      }
+    ]
+
+
+    expect(received).toContainEqual(expected) // deep equality
+
+    Expected value: {"age": 41, "email": "qa.d24f1577-f19@example.com", "name": "Renamed User"}
+    Received array: [{"age": 30, "email": "12345", "name": "QA User 568eeb59-e1f"}, {"age": 30, "email": "qa.d24f1577-f19@example.com", "name": "QA User d24f1577-f19"}, {"age": 30, "email": "qa.bc6fbf38-b98@example.com", "name": "QA User bc6fbf38-b98"}]
+
+      32 |
+      33 |     const res = await api.listUsers();
+    > 34 |     expect(res.body, explain(res)).toContainEqual(updated);
+         |                                    ^
+      35 |   });
+      36 |
+      37 |   test('does not require authentication', async ({ api }) => {
+        at /Users/carlosveloz/Documents/Workspace/sdet-challenge/tests/users.list.spec.ts:34:36
+
+    Error Context: ../test-results/users.list-GET-env-users-reflects-updates-made-via-PUT-dev/error-context.md
+]]>
+</failure>
+</testcase>
+<testcase name="GET /{env}/users › does not require authentication" classname="users.list.spec.ts" time="0.042">
+</testcase>
+</testsuite>
+<testsuite name="users.update.spec.ts" timestamp="2026-10-08T18:13:43.815Z" hostname="dev" tests="36" failures="7" skipped="0" time="2.729" errors="0">
+<testcase name="PUT /{env}/users/{email} › happy path › updates name and age, returning 200 with the updated resource" classname="users.update.spec.ts" time="0.056">
+</testcase>
+<testcase name="PUT /{env}/users/{email} › happy path › persists the update" classname="users.update.spec.ts" time="0.154">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/users.update-PUT-env-users-c4aa4-py-path-persists-the-update-dev/error-context.md]]
+]]>
+</system-out>
+<failure message="GET /dev/users/qa.8b7392d6-15f%40example.com -&gt; HTTP 200" type="expect.toEqual">
+<![CDATA[  [dev] › users.update.spec.ts:27:9 › PUT /{env}/users/{email} › happy path › persists the update ──
+
+    Error: GET /dev/users/qa.8b7392d6-15f%40example.com -> HTTP 200
+    Response body: {
+      "age": 30,
+      "email": "qa.8b7392d6-15f@example.com",
+      "name": "QA User 8b7392d6-15f"
+    }
+
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 2
+    + Received  + 2
+
+      Object {
+    -   "age": 18,
+    +   "age": 30,
+        "email": "qa.8b7392d6-15f@example.com",
+    -   "name": "Persisted Name",
+    +   "name": "QA User 8b7392d6-15f",
+      }
+
+      32 |       const fetched = await api.getUser(user.email);
+      33 |       expectStatus(fetched, 200);
+    > 34 |       expect(fetched.body, explain(fetched)).toEqual(updated);
+         |                                              ^
+      35 |     });
+      36 |
+      37 |     test('is idempotent: same payload twice returns 200 both times (no false 409)', async ({
+        at /Users/carlosveloz/Documents/Workspace/sdet-challenge/tests/users.update.spec.ts:34:46
+
+    Error Context: ../test-results/users.update-PUT-env-users-c4aa4-py-path-persists-the-update-dev/error-context.md
+]]>
+</failure>
+</testcase>
+<testcase name="PUT /{env}/users/{email} › happy path › is idempotent: same payload twice returns 200 both times (no false 409)" classname="users.update.spec.ts" time="0.06">
+</testcase>
+<testcase name="PUT /{env}/users/{email} › happy path › accepts boundary age 1" classname="users.update.spec.ts" time="0.134">
+</testcase>
+<testcase name="PUT /{env}/users/{email} › happy path › accepts boundary age 150" classname="users.update.spec.ts" time="0.06">
+</testcase>
+<testcase name="PUT /{env}/users/{email} › happy path › changing the email moves the user to the new email" classname="users.update.spec.ts" time="0.085">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/users.update-PUT-env-users-6fd20-s-the-user-to-the-new-email-dev/error-context.md]]
+]]>
+</system-out>
+<failure message="Expected HTTP 200 per OpenAPI." type="expect.toBe">
+<![CDATA[  [dev] › users.update.spec.ts:53:9 › PUT /{env}/users/{email} › happy path › changing the email moves the user to the new email 
+
+    Error: Expected HTTP 200 per OpenAPI.
+    GET /dev/users/qa.c6b8d0e8-011%40example.com -> HTTP 500
+    Response body: {
+      "error": "Internal server error"
+    }
+
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 500
+
+       at ../src/support/assertions.ts:11
+
+       9 |
+      10 | export function expectStatus(res: ApiResult, expected: number): void {
+    > 11 |   expect(res.status, `Expected HTTP ${expected} per OpenAPI.\n${explain(res)}`).toBe(expected);
+         |                                                                                 ^
+      12 | }
+      13 |
+      14 | export function expectSchema(name: SchemaName, res: ApiResult): void {
+        at expectStatus (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:11:81)
+        at /Users/carlosveloz/Documents/Workspace/sdet-challenge/tests/users.update.spec.ts:68:19
+
+    Error Context: ../test-results/users.update-PUT-env-users-6fd20-s-the-user-to-the-new-email-dev/error-context.md
+]]>
+</failure>
+</testcase>
+<testcase name="PUT /{env}/users/{email} › validation (400) › rejects age: zero (below minimum 1)" classname="users.update.spec.ts" time="0.079">
+</testcase>
+<testcase name="PUT /{env}/users/{email} › validation (400) › rejects age: negative" classname="users.update.spec.ts" time="0.051">
+</testcase>
+<testcase name="PUT /{env}/users/{email} › validation (400) › rejects age: 151 (above maximum 150)" classname="users.update.spec.ts" time="0.083">
+</testcase>
+<testcase name="PUT /{env}/users/{email} › validation (400) › rejects age: very large" classname="users.update.spec.ts" time="0.058">
+</testcase>
+<testcase name="PUT /{env}/users/{email} › validation (400) › rejects age: float" classname="users.update.spec.ts" time="0.06">
+</testcase>
+<testcase name="PUT /{env}/users/{email} › validation (400) › rejects age: numeric string" classname="users.update.spec.ts" time="0.068">
+</testcase>
+<testcase name="PUT /{env}/users/{email} › validation (400) › rejects age: non-numeric string" classname="users.update.spec.ts" time="0.075">
+</testcase>
+<testcase name="PUT /{env}/users/{email} › validation (400) › rejects age: null" classname="users.update.spec.ts" time="0.054">
+</testcase>
+<testcase name="PUT /{env}/users/{email} › validation (400) › rejects age: boolean" classname="users.update.spec.ts" time="0.087">
+</testcase>
+<testcase name="PUT /{env}/users/{email} › validation (400) › rejects email: missing domain (&quot;user@&quot;)" classname="users.update.spec.ts" time="0.079">
+</testcase>
+<testcase name="PUT /{env}/users/{email} › validation (400) › rejects email: missing &quot;@&quot; (&quot;user.domain.com&quot;)" classname="users.update.spec.ts" time="0.183">
+</testcase>
+<testcase name="PUT /{env}/users/{email} › validation (400) › rejects email: missing local part" classname="users.update.spec.ts" time="0.092">
+</testcase>
+<testcase name="PUT /{env}/users/{email} › validation (400) › rejects email: double &quot;@&quot;" classname="users.update.spec.ts" time="0.079">
+</testcase>
+<testcase name="PUT /{env}/users/{email} › validation (400) › rejects email: contains whitespace" classname="users.update.spec.ts" time="0.104">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/users.update-PUT-env-users-1160c-s-email-contains-whitespace-dev/error-context.md]]
+]]>
+</system-out>
+<failure message="Expected HTTP 400 per OpenAPI." type="expect.toBe">
+<![CDATA[  [dev] › users.update.spec.ts:82:11 › PUT /{env}/users/{email} › validation (400) › rejects email: contains whitespace 
+
+    Error: Expected HTTP 400 per OpenAPI.
+    PUT /dev/users/qa.8a7b2ce1-1e8%40example.com -> HTTP 200
+    Response body: {
+      "age": 30,
+      "email": "us er@example.com",
+      "name": "QA User 8a7b2ce1-1e8"
+    }
+
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 400
+    Received: 200
+
+       at ../src/support/assertions.ts:11
+
+       9 |
+      10 | export function expectStatus(res: ApiResult, expected: number): void {
+    > 11 |   expect(res.status, `Expected HTTP ${expected} per OpenAPI.\n${explain(res)}`).toBe(expected);
+         |                                                                                 ^
+      12 | }
+      13 |
+      14 | export function expectSchema(name: SchemaName, res: ApiResult): void {
+        at expectStatus (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:11:81)
+        at expectError (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:27:3)
+        at /Users/carlosveloz/Documents/Workspace/sdet-challenge/tests/users.update.spec.ts:84:20
+
+    Error Context: ../test-results/users.update-PUT-env-users-1160c-s-email-contains-whitespace-dev/error-context.md
+]]>
+</failure>
+</testcase>
+<testcase name="PUT /{env}/users/{email} › validation (400) › rejects email: empty string" classname="users.update.spec.ts" time="0.06">
+</testcase>
+<testcase name="PUT /{env}/users/{email} › validation (400) › rejects email: number" classname="users.update.spec.ts" time="0.065">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/users.update-PUT-env-users-262d6-on-400-rejects-email-number-dev/error-context.md]]
+]]>
+</system-out>
+<failure message="Expected HTTP 400 per OpenAPI." type="expect.toBe">
+<![CDATA[  [dev] › users.update.spec.ts:82:11 › PUT /{env}/users/{email} › validation (400) › rejects email: number 
+
+    Error: Expected HTTP 400 per OpenAPI.
+    PUT /dev/users/qa.10fd3536-abc%40example.com -> HTTP 500
+    Response body: {
+      "error": "Internal server error"
+    }
+
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 400
+    Received: 500
+
+       at ../src/support/assertions.ts:11
+
+       9 |
+      10 | export function expectStatus(res: ApiResult, expected: number): void {
+    > 11 |   expect(res.status, `Expected HTTP ${expected} per OpenAPI.\n${explain(res)}`).toBe(expected);
+         |                                                                                 ^
+      12 | }
+      13 |
+      14 | export function expectSchema(name: SchemaName, res: ApiResult): void {
+        at expectStatus (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:11:81)
+        at expectError (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:27:3)
+        at /Users/carlosveloz/Documents/Workspace/sdet-challenge/tests/users.update.spec.ts:84:20
+
+    Error Context: ../test-results/users.update-PUT-env-users-262d6-on-400-rejects-email-number-dev/error-context.md
+]]>
+</failure>
+</testcase>
+<testcase name="PUT /{env}/users/{email} › validation (400) › rejects email: null" classname="users.update.spec.ts" time="0.064">
+</testcase>
+<testcase name="PUT /{env}/users/{email} › validation (400) › rejects name: number" classname="users.update.spec.ts" time="0.076">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/users.update-PUT-env-users-397e6-ion-400-rejects-name-number-dev/error-context.md]]
+]]>
+</system-out>
+<failure message="Expected HTTP 400 per OpenAPI." type="expect.toBe">
+<![CDATA[  [dev] › users.update.spec.ts:89:11 › PUT /{env}/users/{email} › validation (400) › rejects name: number 
+
+    Error: Expected HTTP 400 per OpenAPI.
+    PUT /dev/users/qa.c9c10cab-181%40example.com -> HTTP 200
+    Response body: {
+      "age": 30,
+      "email": "qa.c9c10cab-181@example.com",
+      "name": 123
+    }
+
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 400
+    Received: 200
+
+       at ../src/support/assertions.ts:11
+
+       9 |
+      10 | export function expectStatus(res: ApiResult, expected: number): void {
+    > 11 |   expect(res.status, `Expected HTTP ${expected} per OpenAPI.\n${explain(res)}`).toBe(expected);
+         |                                                                                 ^
+      12 | }
+      13 |
+      14 | export function expectSchema(name: SchemaName, res: ApiResult): void {
+        at expectStatus (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:11:81)
+        at expectError (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:27:3)
+        at /Users/carlosveloz/Documents/Workspace/sdet-challenge/tests/users.update.spec.ts:91:20
+
+    Error Context: ../test-results/users.update-PUT-env-users-397e6-ion-400-rejects-name-number-dev/error-context.md
+]]>
+</failure>
+</testcase>
+<testcase name="PUT /{env}/users/{email} › validation (400) › rejects name: null" classname="users.update.spec.ts" time="0.059">
+</testcase>
+<testcase name="PUT /{env}/users/{email} › validation (400) › rejects name: boolean" classname="users.update.spec.ts" time="0.058">
+</testcase>
+<testcase name="PUT /{env}/users/{email} › validation (400) › rejects name: object" classname="users.update.spec.ts" time="0.062">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/users.update-PUT-env-users-65b21-ion-400-rejects-name-object-dev/error-context.md]]
+]]>
+</system-out>
+<failure message="Expected HTTP 400 per OpenAPI." type="expect.toBe">
+<![CDATA[  [dev] › users.update.spec.ts:89:11 › PUT /{env}/users/{email} › validation (400) › rejects name: object 
+
+    Error: Expected HTTP 400 per OpenAPI.
+    PUT /dev/users/qa.1c1132b1-888%40example.com -> HTTP 500
+    Response body: {
+      "error": "Internal server error"
+    }
+
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 400
+    Received: 500
+
+       at ../src/support/assertions.ts:11
+
+       9 |
+      10 | export function expectStatus(res: ApiResult, expected: number): void {
+    > 11 |   expect(res.status, `Expected HTTP ${expected} per OpenAPI.\n${explain(res)}`).toBe(expected);
+         |                                                                                 ^
+      12 | }
+      13 |
+      14 | export function expectSchema(name: SchemaName, res: ApiResult): void {
+        at expectStatus (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:11:81)
+        at expectError (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:27:3)
+        at /Users/carlosveloz/Documents/Workspace/sdet-challenge/tests/users.update.spec.ts:91:20
+
+    Error Context: ../test-results/users.update-PUT-env-users-65b21-ion-400-rejects-name-object-dev/error-context.md
+]]>
+</failure>
+</testcase>
+<testcase name="PUT /{env}/users/{email} › validation (400) › rejects a body without &quot;name&quot;" classname="users.update.spec.ts" time="0.067">
+</testcase>
+<testcase name="PUT /{env}/users/{email} › validation (400) › rejects a body without &quot;email&quot;" classname="users.update.spec.ts" time="0.054">
+</testcase>
+<testcase name="PUT /{env}/users/{email} › validation (400) › rejects a body without &quot;age&quot;" classname="users.update.spec.ts" time="0.055">
+</testcase>
+<testcase name="PUT /{env}/users/{email} › validation (400) › rejects an empty object" classname="users.update.spec.ts" time="0.058">
+</testcase>
+<testcase name="PUT /{env}/users/{email} › validation (400) › leaves the stored user unchanged after a rejected update" classname="users.update.spec.ts" time="0.077">
+</testcase>
+<testcase name="PUT /{env}/users/{email} › not found (404) › returns 404 when the user does not exist" classname="users.update.spec.ts" time="0.014">
+</testcase>
+<testcase name="PUT /{env}/users/{email} › not found (404) › does not create the user as a side effect" classname="users.update.spec.ts" time="0.035">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/users.update-PUT-env-users-a4011-e-the-user-as-a-side-effect-dev/error-context.md]]
+]]>
+</system-out>
+<failure message="Expected HTTP 404 per OpenAPI." type="expect.toBe">
+<![CDATA[  [dev] › users.update.spec.ts:124:9 › PUT /{env}/users/{email} › not found (404) › does not create the user as a side effect 
+
+    Error: Expected HTTP 404 per OpenAPI.
+    GET /dev/users/missing.1594c051-a75%40example.com -> HTTP 500
+    Response body: {
+      "error": "Internal server error"
+    }
+
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 404
+    Received: 500
+
+       at ../src/support/assertions.ts:11
+
+       9 |
+      10 | export function expectStatus(res: ApiResult, expected: number): void {
+    > 11 |   expect(res.status, `Expected HTTP ${expected} per OpenAPI.\n${explain(res)}`).toBe(expected);
+         |                                                                                 ^
+      12 | }
+      13 |
+      14 | export function expectSchema(name: SchemaName, res: ApiResult): void {
+        at expectStatus (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:11:81)
+        at /Users/carlosveloz/Documents/Workspace/sdet-challenge/tests/users.update.spec.ts:127:19
+
+    Error Context: ../test-results/users.update-PUT-env-users-a4011-e-the-user-as-a-side-effect-dev/error-context.md
+]]>
+</failure>
+</testcase>
+<testcase name="PUT /{env}/users/{email} › duplicates (409) › rejects changing the email to one that already exists" classname="users.update.spec.ts" time="0.08">
+</testcase>
+<testcase name="PUT /{env}/users/{email} › duplicates (409) › keeps both users untouched after a rejected email change" classname="users.update.spec.ts" time="0.144">
+</testcase>
+</testsuite>
+<testsuite name="contract.spec.ts" timestamp="2026-10-08T18:13:43.815Z" hostname="prod" tests="13" failures="3" skipped="0" time="0.82" errors="0">
+<testcase name="OpenAPI contract › User schema › GET /users: every item matches User" classname="contract.spec.ts" time="0.081">
+</testcase>
+<testcase name="OpenAPI contract › User schema › POST /users 201 matches User" classname="contract.spec.ts" time="0.064">
+</testcase>
+<testcase name="OpenAPI contract › User schema › GET /users/{email} 200 matches User" classname="contract.spec.ts" time="0.084">
+</testcase>
+<testcase name="OpenAPI contract › User schema › PUT /users/{email} 200 matches User" classname="contract.spec.ts" time="0.093">
+</testcase>
+<testcase name="OpenAPI contract › ErrorResponse schema › POST /users 400" classname="contract.spec.ts" time="0.03">
+</testcase>
+<testcase name="OpenAPI contract › ErrorResponse schema › POST /users 409" classname="contract.spec.ts" time="0.089">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/contract-OpenAPI-contract--dca7e-ponse-schema-POST-users-409-prod/error-context.md]]
+]]>
+</system-out>
+<failure message="Expected HTTP 409 per OpenAPI." type="expect.toBe">
+<![CDATA[  [prod] › contract.spec.ts:60:9 › OpenAPI contract › ErrorResponse schema › POST /users 409 @contract 
+
+    Error: Expected HTTP 409 per OpenAPI.
+    POST /prod/users -> HTTP 500
+    Response body: {
+      "error": "Internal server error"
+    }
+
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 409
+    Received: 500
+
+       at ../src/support/assertions.ts:11
+
+       9 |
+      10 | export function expectStatus(res: ApiResult, expected: number): void {
+    > 11 |   expect(res.status, `Expected HTTP ${expected} per OpenAPI.\n${explain(res)}`).toBe(expected);
+         |                                                                                 ^
+      12 | }
+      13 |
+      14 | export function expectSchema(name: SchemaName, res: ApiResult): void {
+        at expectStatus (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:11:81)
+        at expectError (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:27:3)
+        at /Users/carlosveloz/Documents/Workspace/sdet-challenge/tests/contract.spec.ts:62:18
+
+    Error Context: ../test-results/contract-OpenAPI-contract--dca7e-ponse-schema-POST-users-409-prod/error-context.md
+]]>
+</failure>
+</testcase>
+<testcase name="OpenAPI contract › ErrorResponse schema › GET /users/{email} 404" classname="contract.spec.ts" time="0.026">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/contract-OpenAPI-contract--35a60--schema-GET-users-email-404-prod/error-context.md]]
+]]>
+</system-out>
+<failure message="Expected HTTP 404 per OpenAPI." type="expect.toBe">
+<![CDATA[  [prod] › contract.spec.ts:65:9 › OpenAPI contract › ErrorResponse schema › GET /users/{email} 404 @contract 
+
+    Error: Expected HTTP 404 per OpenAPI.
+    GET /prod/users/missing.dba387bb-4d7%40example.com -> HTTP 500
+    Response body: {
+      "error": "Internal server error"
+    }
+
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 404
+    Received: 500
+
+       at ../src/support/assertions.ts:11
+
+       9 |
+      10 | export function expectStatus(res: ApiResult, expected: number): void {
+    > 11 |   expect(res.status, `Expected HTTP ${expected} per OpenAPI.\n${explain(res)}`).toBe(expected);
+         |                                                                                 ^
+      12 | }
+      13 |
+      14 | export function expectSchema(name: SchemaName, res: ApiResult): void {
+        at expectStatus (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:11:81)
+        at expectError (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:27:3)
+        at /Users/carlosveloz/Documents/Workspace/sdet-challenge/tests/contract.spec.ts:66:18
+
+    Error Context: ../test-results/contract-OpenAPI-contract--35a60--schema-GET-users-email-404-prod/error-context.md
+]]>
+</failure>
+</testcase>
+<testcase name="OpenAPI contract › ErrorResponse schema › PUT /users/{email} 400" classname="contract.spec.ts" time="0.062">
+</testcase>
+<testcase name="OpenAPI contract › ErrorResponse schema › PUT /users/{email} 404" classname="contract.spec.ts" time="0.044">
+</testcase>
+<testcase name="OpenAPI contract › ErrorResponse schema › PUT /users/{email} 409" classname="contract.spec.ts" time="0.117">
+</testcase>
+<testcase name="OpenAPI contract › ErrorResponse schema › DELETE /users/{email} 401" classname="contract.spec.ts" time="0.09">
+</testcase>
+<testcase name="OpenAPI contract › ErrorResponse schema › DELETE /users/{email} 404" classname="contract.spec.ts" time="0.025">
+</testcase>
+<testcase name="OpenAPI contract › ErrorResponse schema › error message is a non-empty string" classname="contract.spec.ts" time="0.015">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/contract-OpenAPI-contract--3c862-ssage-is-a-non-empty-string-prod/error-context.md]]
+]]>
+</system-out>
+<failure message="Expected HTTP 404 per OpenAPI." type="expect.toBe">
+<![CDATA[  [prod] › contract.spec.ts:94:9 › OpenAPI contract › ErrorResponse schema › error message is a non-empty string @contract 
+
+    Error: Expected HTTP 404 per OpenAPI.
+    GET /prod/users/missing.5cd927a5-2bc%40example.com -> HTTP 500
+    Response body: {
+      "error": "Internal server error"
+    }
+
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 404
+    Received: 500
+
+       at ../src/support/assertions.ts:11
+
+       9 |
+      10 | export function expectStatus(res: ApiResult, expected: number): void {
+    > 11 |   expect(res.status, `Expected HTTP ${expected} per OpenAPI.\n${explain(res)}`).toBe(expected);
+         |                                                                                 ^
+      12 | }
+      13 |
+      14 | export function expectSchema(name: SchemaName, res: ApiResult): void {
+        at expectStatus (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:11:81)
+        at /Users/carlosveloz/Documents/Workspace/sdet-challenge/tests/contract.spec.ts:96:19
+
+    Error Context: ../test-results/contract-OpenAPI-contract--3c862-ssage-is-a-non-empty-string-prod/error-context.md
+]]>
+</failure>
+</testcase>
+</testsuite>
+<testsuite name="environment-isolation.spec.ts" timestamp="2026-10-08T18:13:43.815Z" hostname="prod" tests="6" failures="1" skipped="0" time="0.605" errors="0">
+<testcase name="environment isolation › a user created here is not visible in the other environment (GET by email)" classname="environment-isolation.spec.ts" time="0.056">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/environment-isolation-envi-1cf42-r-environment-GET-by-email--prod/error-context.md]]
+]]>
+</system-out>
+<failure message="Expected HTTP 404 per OpenAPI." type="expect.toBe">
+<![CDATA[  [prod] › environment-isolation.spec.ts:8:7 › environment isolation › a user created here is not visible in the other environment (GET by email) @isolation 
+
+    Error: Expected HTTP 404 per OpenAPI.
+    GET /dev/users/qa.c5e0bfc9-202%40example.com -> HTTP 500
+    Response body: {
+      "error": "Internal server error"
+    }
+
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 404
+    Received: 500
+
+       at ../src/support/assertions.ts:11
+
+       9 |
+      10 | export function expectStatus(res: ApiResult, expected: number): void {
+    > 11 |   expect(res.status, `Expected HTTP ${expected} per OpenAPI.\n${explain(res)}`).toBe(expected);
+         |                                                                                 ^
+      12 | }
+      13 |
+      14 | export function expectSchema(name: SchemaName, res: ApiResult): void {
+        at expectStatus (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:11:81)
+        at expectError (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:27:3)
+        at /Users/carlosveloz/Documents/Workspace/sdet-challenge/tests/environment-isolation.spec.ts:15:16
+
+    Error Context: ../test-results/environment-isolation-envi-1cf42-r-environment-GET-by-email--prod/error-context.md
+]]>
+</failure>
+</testcase>
+<testcase name="environment isolation › a user created here is not listed in the other environment" classname="environment-isolation.spec.ts" time="0.064">
+</testcase>
+<testcase name="environment isolation › the same email can exist independently in both environments (no cross-env 409)" classname="environment-isolation.spec.ts" time="0.208">
+</testcase>
+<testcase name="environment isolation › updating a user here does not alter the same email in the other environment" classname="environment-isolation.spec.ts" time="0.103">
+</testcase>
+<testcase name="environment isolation › deleting a user here does not delete the same email in the other environment" classname="environment-isolation.spec.ts" time="0.162">
+</testcase>
+<testcase name="environment isolation › an unknown environment prefix is not served" classname="environment-isolation.spec.ts" time="0.012">
+</testcase>
+</testsuite>
+<testsuite name="users.create.spec.ts" timestamp="2026-10-08T18:13:43.815Z" hostname="prod" tests="36" failures="11" skipped="0" time="1.705" errors="0">
+<testcase name="POST /{env}/users › happy path › creates a user and returns 201 with the created resource" classname="users.create.spec.ts" time="0.089">
+</testcase>
+<testcase name="POST /{env}/users › happy path › persists the user so it can be fetched afterwards" classname="users.create.spec.ts" time="0.053">
+</testcase>
+<testcase name="POST /{env}/users › happy path › accepts boundary age 1" classname="users.create.spec.ts" time="0.044">
+</testcase>
+<testcase name="POST /{env}/users › happy path › accepts boundary age 150" classname="users.create.spec.ts" time="0.059">
+</testcase>
+<testcase name="POST /{env}/users › happy path › accepts an email with plus-addressing and subdomain" classname="users.create.spec.ts" time="0.058">
+</testcase>
+<testcase name="POST /{env}/users › validation (400) › rejects age: zero (below minimum 1)" classname="users.create.spec.ts" time="0.025">
+</testcase>
+<testcase name="POST /{env}/users › validation (400) › rejects age: negative" classname="users.create.spec.ts" time="0.048">
+</testcase>
+<testcase name="POST /{env}/users › validation (400) › rejects age: 151 (above maximum 150)" classname="users.create.spec.ts" time="0.03">
+</testcase>
+<testcase name="POST /{env}/users › validation (400) › rejects age: very large" classname="users.create.spec.ts" time="0.05">
+</testcase>
+<testcase name="POST /{env}/users › validation (400) › rejects age: float" classname="users.create.spec.ts" time="0.047">
+</testcase>
+<testcase name="POST /{env}/users › validation (400) › rejects age: numeric string" classname="users.create.spec.ts" time="0.041">
+</testcase>
+<testcase name="POST /{env}/users › validation (400) › rejects age: non-numeric string" classname="users.create.spec.ts" time="0.038">
+</testcase>
+<testcase name="POST /{env}/users › validation (400) › rejects age: null" classname="users.create.spec.ts" time="0.046">
+</testcase>
+<testcase name="POST /{env}/users › validation (400) › rejects age: boolean" classname="users.create.spec.ts" time="0.043">
+</testcase>
+<testcase name="POST /{env}/users › validation (400) › rejects email: missing domain (&quot;user@&quot;)" classname="users.create.spec.ts" time="0.062">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/users.create-POST-env-user-1b926--email-missing-domain-user--prod/error-context.md]]
+]]>
+</system-out>
+<failure message="Expected HTTP 400 per OpenAPI." type="expect.toBe">
+<![CDATA[  [prod] › users.create.spec.ts:62:11 › POST /{env}/users › validation (400) › rejects email: missing domain ("user@") 
+
+    Error: Expected HTTP 400 per OpenAPI.
+    POST /prod/users -> HTTP 201
+    Response body: {
+      "age": 30,
+      "email": "user@",
+      "name": "QA User 9601bab9-d12"
+    }
+
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 400
+    Received: 201
+
+       at ../src/support/assertions.ts:11
+
+       9 |
+      10 | export function expectStatus(res: ApiResult, expected: number): void {
+    > 11 |   expect(res.status, `Expected HTTP ${expected} per OpenAPI.\n${explain(res)}`).toBe(expected);
+         |                                                                                 ^
+      12 | }
+      13 |
+      14 | export function expectSchema(name: SchemaName, res: ApiResult): void {
+        at expectStatus (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:11:81)
+        at expectError (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:27:3)
+        at /Users/carlosveloz/Documents/Workspace/sdet-challenge/tests/users.create.spec.ts:65:20
+
+    Error Context: ../test-results/users.create-POST-env-user-1b926--email-missing-domain-user--prod/error-context.md
+]]>
+</failure>
+</testcase>
+<testcase name="POST /{env}/users › validation (400) › rejects email: missing &quot;@&quot; (&quot;user.domain.com&quot;)" classname="users.create.spec.ts" time="0.063">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/users.create-POST-env-user-3ecf5-il-missing-user-domain-com--prod/error-context.md]]
+]]>
+</system-out>
+<failure message="Expected HTTP 400 per OpenAPI." type="expect.toBe">
+<![CDATA[  [prod] › users.create.spec.ts:62:11 › POST /{env}/users › validation (400) › rejects email: missing "@" ("user.domain.com") 
+
+    Error: Expected HTTP 400 per OpenAPI.
+    POST /prod/users -> HTTP 201
+    Response body: {
+      "age": 30,
+      "email": "user.domain.com",
+      "name": "QA User 347ef08c-853"
+    }
+
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 400
+    Received: 201
+
+       at ../src/support/assertions.ts:11
+
+       9 |
+      10 | export function expectStatus(res: ApiResult, expected: number): void {
+    > 11 |   expect(res.status, `Expected HTTP ${expected} per OpenAPI.\n${explain(res)}`).toBe(expected);
+         |                                                                                 ^
+      12 | }
+      13 |
+      14 | export function expectSchema(name: SchemaName, res: ApiResult): void {
+        at expectStatus (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:11:81)
+        at expectError (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:27:3)
+        at /Users/carlosveloz/Documents/Workspace/sdet-challenge/tests/users.create.spec.ts:65:20
+
+    Error Context: ../test-results/users.create-POST-env-user-3ecf5-il-missing-user-domain-com--prod/error-context.md
+]]>
+</failure>
+</testcase>
+<testcase name="POST /{env}/users › validation (400) › rejects email: missing local part" classname="users.create.spec.ts" time="0.047">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/users.create-POST-env-user-f89d2-ts-email-missing-local-part-prod/error-context.md]]
+]]>
+</system-out>
+<failure message="Expected HTTP 400 per OpenAPI." type="expect.toBe">
+<![CDATA[  [prod] › users.create.spec.ts:62:11 › POST /{env}/users › validation (400) › rejects email: missing local part 
+
+    Error: Expected HTTP 400 per OpenAPI.
+    POST /prod/users -> HTTP 201
+    Response body: {
+      "age": 30,
+      "email": "@example.com",
+      "name": "QA User 665e5b41-836"
+    }
+
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 400
+    Received: 201
+
+       at ../src/support/assertions.ts:11
+
+       9 |
+      10 | export function expectStatus(res: ApiResult, expected: number): void {
+    > 11 |   expect(res.status, `Expected HTTP ${expected} per OpenAPI.\n${explain(res)}`).toBe(expected);
+         |                                                                                 ^
+      12 | }
+      13 |
+      14 | export function expectSchema(name: SchemaName, res: ApiResult): void {
+        at expectStatus (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:11:81)
+        at expectError (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:27:3)
+        at /Users/carlosveloz/Documents/Workspace/sdet-challenge/tests/users.create.spec.ts:65:20
+
+    Error Context: ../test-results/users.create-POST-env-user-f89d2-ts-email-missing-local-part-prod/error-context.md
+]]>
+</failure>
+</testcase>
+<testcase name="POST /{env}/users › validation (400) › rejects email: double &quot;@&quot;" classname="users.create.spec.ts" time="0.073">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/users.create-POST-env-user-727ae-n-400-rejects-email-double--prod/error-context.md]]
+]]>
+</system-out>
+<failure message="Expected HTTP 400 per OpenAPI." type="expect.toBe">
+<![CDATA[  [prod] › users.create.spec.ts:62:11 › POST /{env}/users › validation (400) › rejects email: double "@" 
+
+    Error: Expected HTTP 400 per OpenAPI.
+    POST /prod/users -> HTTP 201
+    Response body: {
+      "age": 30,
+      "email": "user@@example.com",
+      "name": "QA User b61d150d-b77"
+    }
+
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 400
+    Received: 201
+
+       at ../src/support/assertions.ts:11
+
+       9 |
+      10 | export function expectStatus(res: ApiResult, expected: number): void {
+    > 11 |   expect(res.status, `Expected HTTP ${expected} per OpenAPI.\n${explain(res)}`).toBe(expected);
+         |                                                                                 ^
+      12 | }
+      13 |
+      14 | export function expectSchema(name: SchemaName, res: ApiResult): void {
+        at expectStatus (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:11:81)
+        at expectError (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:27:3)
+        at /Users/carlosveloz/Documents/Workspace/sdet-challenge/tests/users.create.spec.ts:65:20
+
+    Error Context: ../test-results/users.create-POST-env-user-727ae-n-400-rejects-email-double--prod/error-context.md
+]]>
+</failure>
+</testcase>
+<testcase name="POST /{env}/users › validation (400) › rejects email: contains whitespace" classname="users.create.spec.ts" time="0.06">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/users.create-POST-env-user-0c1f1-s-email-contains-whitespace-prod/error-context.md]]
+]]>
+</system-out>
+<failure message="Expected HTTP 400 per OpenAPI." type="expect.toBe">
+<![CDATA[  [prod] › users.create.spec.ts:62:11 › POST /{env}/users › validation (400) › rejects email: contains whitespace 
+
+    Error: Expected HTTP 400 per OpenAPI.
+    POST /prod/users -> HTTP 201
+    Response body: {
+      "age": 30,
+      "email": "us er@example.com",
+      "name": "QA User b41b5793-a78"
+    }
+
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 400
+    Received: 201
+
+       at ../src/support/assertions.ts:11
+
+       9 |
+      10 | export function expectStatus(res: ApiResult, expected: number): void {
+    > 11 |   expect(res.status, `Expected HTTP ${expected} per OpenAPI.\n${explain(res)}`).toBe(expected);
+         |                                                                                 ^
+      12 | }
+      13 |
+      14 | export function expectSchema(name: SchemaName, res: ApiResult): void {
+        at expectStatus (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:11:81)
+        at expectError (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:27:3)
+        at /Users/carlosveloz/Documents/Workspace/sdet-challenge/tests/users.create.spec.ts:65:20
+
+    Error Context: ../test-results/users.create-POST-env-user-0c1f1-s-email-contains-whitespace-prod/error-context.md
+]]>
+</failure>
+</testcase>
+<testcase name="POST /{env}/users › validation (400) › rejects email: empty string" classname="users.create.spec.ts" time="0.035">
+</testcase>
+<testcase name="POST /{env}/users › validation (400) › rejects email: number" classname="users.create.spec.ts" time="0.027">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/users.create-POST-env-user-2a408-on-400-rejects-email-number-prod/error-context.md]]
+]]>
+</system-out>
+<failure message="Expected HTTP 400 per OpenAPI." type="expect.toBe">
+<![CDATA[  [prod] › users.create.spec.ts:62:11 › POST /{env}/users › validation (400) › rejects email: number 
+
+    Error: Expected HTTP 400 per OpenAPI.
+    POST /prod/users -> HTTP 201
+    Response body: {
+      "age": 30,
+      "email": 12345,
+      "name": "QA User c0d56b08-7de"
+    }
+
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 400
+    Received: 201
+
+       at ../src/support/assertions.ts:11
+
+       9 |
+      10 | export function expectStatus(res: ApiResult, expected: number): void {
+    > 11 |   expect(res.status, `Expected HTTP ${expected} per OpenAPI.\n${explain(res)}`).toBe(expected);
+         |                                                                                 ^
+      12 | }
+      13 |
+      14 | export function expectSchema(name: SchemaName, res: ApiResult): void {
+        at expectStatus (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:11:81)
+        at expectError (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:27:3)
+        at /Users/carlosveloz/Documents/Workspace/sdet-challenge/tests/users.create.spec.ts:65:20
+
+    Error Context: ../test-results/users.create-POST-env-user-2a408-on-400-rejects-email-number-prod/error-context.md
+]]>
+</failure>
+</testcase>
+<testcase name="POST /{env}/users › validation (400) › rejects email: null" classname="users.create.spec.ts" time="0.034">
+</testcase>
+<testcase name="POST /{env}/users › validation (400) › rejects name: number" classname="users.create.spec.ts" time="0.073">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/users.create-POST-env-user-5bad1-ion-400-rejects-name-number-prod/error-context.md]]
+]]>
+</system-out>
+<failure message="Expected HTTP 400 per OpenAPI." type="expect.toBe">
+<![CDATA[  [prod] › users.create.spec.ts:70:11 › POST /{env}/users › validation (400) › rejects name: number 
+
+    Error: Expected HTTP 400 per OpenAPI.
+    POST /prod/users -> HTTP 201
+    Response body: {
+      "age": 30,
+      "email": "qa.107755c2-42c@example.com",
+      "name": 123
+    }
+
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 400
+    Received: 201
+
+       at ../src/support/assertions.ts:11
+
+       9 |
+      10 | export function expectStatus(res: ApiResult, expected: number): void {
+    > 11 |   expect(res.status, `Expected HTTP ${expected} per OpenAPI.\n${explain(res)}`).toBe(expected);
+         |                                                                                 ^
+      12 | }
+      13 |
+      14 | export function expectSchema(name: SchemaName, res: ApiResult): void {
+        at expectStatus (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:11:81)
+        at expectError (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:27:3)
+        at /Users/carlosveloz/Documents/Workspace/sdet-challenge/tests/users.create.spec.ts:74:20
+
+    Error Context: ../test-results/users.create-POST-env-user-5bad1-ion-400-rejects-name-number-prod/error-context.md
+]]>
+</failure>
+</testcase>
+<testcase name="POST /{env}/users › validation (400) › rejects name: null" classname="users.create.spec.ts" time="0.019">
+</testcase>
+<testcase name="POST /{env}/users › validation (400) › rejects name: boolean" classname="users.create.spec.ts" time="0.055">
+</testcase>
+<testcase name="POST /{env}/users › validation (400) › rejects name: object" classname="users.create.spec.ts" time="0.032">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/users.create-POST-env-user-b935d-ion-400-rejects-name-object-prod/error-context.md]]
+]]>
+</system-out>
+<failure message="Expected HTTP 400 per OpenAPI." type="expect.toBe">
+<![CDATA[  [prod] › users.create.spec.ts:70:11 › POST /{env}/users › validation (400) › rejects name: object 
+
+    Error: Expected HTTP 400 per OpenAPI.
+    POST /prod/users -> HTTP 500
+    Response body: {
+      "error": "Internal server error"
+    }
+
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 400
+    Received: 500
+
+       at ../src/support/assertions.ts:11
+
+       9 |
+      10 | export function expectStatus(res: ApiResult, expected: number): void {
+    > 11 |   expect(res.status, `Expected HTTP ${expected} per OpenAPI.\n${explain(res)}`).toBe(expected);
+         |                                                                                 ^
+      12 | }
+      13 |
+      14 | export function expectSchema(name: SchemaName, res: ApiResult): void {
+        at expectStatus (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:11:81)
+        at expectError (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:27:3)
+        at /Users/carlosveloz/Documents/Workspace/sdet-challenge/tests/users.create.spec.ts:74:20
+
+    Error Context: ../test-results/users.create-POST-env-user-b935d-ion-400-rejects-name-object-prod/error-context.md
+]]>
+</failure>
+</testcase>
+<testcase name="POST /{env}/users › validation (400) › rejects a body without &quot;name&quot;" classname="users.create.spec.ts" time="0.021">
+</testcase>
+<testcase name="POST /{env}/users › validation (400) › rejects a body without &quot;email&quot;" classname="users.create.spec.ts" time="0.048">
+</testcase>
+<testcase name="POST /{env}/users › validation (400) › rejects a body without &quot;age&quot;" classname="users.create.spec.ts" time="0.018">
+</testcase>
+<testcase name="POST /{env}/users › validation (400) › rejects an empty object" classname="users.create.spec.ts" time="0.012">
+</testcase>
+<testcase name="POST /{env}/users › validation (400) › rejects a request without body" classname="users.create.spec.ts" time="0.008">
+</testcase>
+<testcase name="POST /{env}/users › validation (400) › rejects malformed JSON" classname="users.create.spec.ts" time="0.01">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/users.create-POST-env-user-7ef0b--400-rejects-malformed-JSON-prod/error-context.md]]
+]]>
+</system-out>
+<failure message="Expected HTTP 400 per OpenAPI." type="expect.toBe">
+<![CDATA[  [prod] › users.create.spec.ts:96:9 › POST /{env}/users › validation (400) › rejects malformed JSON 
+
+    Error: Expected HTTP 400 per OpenAPI.
+    POST /prod/users -> HTTP 500
+    Response body: {
+      "error": "Internal server error"
+    }
+
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 400
+    Received: 500
+
+       at ../src/support/assertions.ts:11
+
+       9 |
+      10 | export function expectStatus(res: ApiResult, expected: number): void {
+    > 11 |   expect(res.status, `Expected HTTP ${expected} per OpenAPI.\n${explain(res)}`).toBe(expected);
+         |                                                                                 ^
+      12 | }
+      13 |
+      14 | export function expectSchema(name: SchemaName, res: ApiResult): void {
+        at expectStatus (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:11:81)
+        at expectError (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:27:3)
+        at /Users/carlosveloz/Documents/Workspace/sdet-challenge/tests/users.create.spec.ts:97:18
+
+    Error Context: ../test-results/users.create-POST-env-user-7ef0b--400-rejects-malformed-JSON-prod/error-context.md
+]]>
+</failure>
+</testcase>
+<testcase name="POST /{env}/users › validation (400) › does not persist a user that failed validation" classname="users.create.spec.ts" time="0.066">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/users.create-POST-env-user-a8622-user-that-failed-validation-prod/error-context.md]]
+]]>
+</system-out>
+<failure message="Expected HTTP 404 per OpenAPI." type="expect.toBe">
+<![CDATA[  [prod] › users.create.spec.ts:100:9 › POST /{env}/users › validation (400) › does not persist a user that failed validation 
+
+    Error: Expected HTTP 404 per OpenAPI.
+    GET /prod/users/qa.d2a8af1a-e81%40example.com -> HTTP 500
+    Response body: {
+      "error": "Internal server error"
+    }
+
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 404
+    Received: 500
+
+       at ../src/support/assertions.ts:11
+
+       9 |
+      10 | export function expectStatus(res: ApiResult, expected: number): void {
+    > 11 |   expect(res.status, `Expected HTTP ${expected} per OpenAPI.\n${explain(res)}`).toBe(expected);
+         |                                                                                 ^
+      12 | }
+      13 |
+      14 | export function expectSchema(name: SchemaName, res: ApiResult): void {
+        at expectStatus (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:11:81)
+        at /Users/carlosveloz/Documents/Workspace/sdet-challenge/tests/users.create.spec.ts:104:19
+
+    Error Context: ../test-results/users.create-POST-env-user-a8622-user-that-failed-validation-prod/error-context.md
+]]>
+</failure>
+</testcase>
+<testcase name="POST /{env}/users › duplicates (409) › rejects a second user with the same email" classname="users.create.spec.ts" time="0.064">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/users.create-POST-env-user-41f14-nd-user-with-the-same-email-prod/error-context.md]]
+]]>
+</system-out>
+<failure message="Expected HTTP 409 per OpenAPI." type="expect.toBe">
+<![CDATA[  [prod] › users.create.spec.ts:109:9 › POST /{env}/users › duplicates (409) › rejects a second user with the same email 
+
+    Error: Expected HTTP 409 per OpenAPI.
+    POST /prod/users -> HTTP 500
+    Response body: {
+      "error": "Internal server error"
+    }
+
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 409
+    Received: 500
+
+       at ../src/support/assertions.ts:11
+
+       9 |
+      10 | export function expectStatus(res: ApiResult, expected: number): void {
+    > 11 |   expect(res.status, `Expected HTTP ${expected} per OpenAPI.\n${explain(res)}`).toBe(expected);
+         |                                                                                 ^
+      12 | }
+      13 |
+      14 | export function expectSchema(name: SchemaName, res: ApiResult): void {
+        at expectStatus (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:11:81)
+        at expectError (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:27:3)
+        at /Users/carlosveloz/Documents/Workspace/sdet-challenge/tests/users.create.spec.ts:112:18
+
+    Error Context: ../test-results/users.create-POST-env-user-41f14-nd-user-with-the-same-email-prod/error-context.md
+]]>
+</failure>
+</testcase>
+<testcase name="POST /{env}/users › duplicates (409) › keeps the original user untouched after a rejected duplicate" classname="users.create.spec.ts" time="0.076">
+</testcase>
+<testcase name="POST /{env}/users › duplicates (409) › allows re-using an email after the user was deleted" classname="users.create.spec.ts" time="0.131">
+</testcase>
+</testsuite>
+<testsuite name="users.delete.spec.ts" timestamp="2026-10-08T18:13:43.815Z" hostname="prod" tests="11" failures="1" skipped="0" time="0.847" errors="0">
+<testcase name="DELETE /{env}/users/{email} › happy path › deletes a user with a valid token and returns 204 without body" classname="users.delete.spec.ts" time="0.101">
+</testcase>
+<testcase name="DELETE /{env}/users/{email} › happy path › the user is no longer retrievable afterwards" classname="users.delete.spec.ts" time="0.078">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/users.delete-DELETE-env-us-73153-nger-retrievable-afterwards-prod/error-context.md]]
+]]>
+</system-out>
+<failure message="Expected HTTP 404 per OpenAPI." type="expect.toBe">
+<![CDATA[  [prod] › users.delete.spec.ts:18:9 › DELETE /{env}/users/{email} › happy path › the user is no longer retrievable afterwards 
+
+    Error: Expected HTTP 404 per OpenAPI.
+    GET /prod/users/qa.cc247f04-342%40example.com -> HTTP 500
+    Response body: {
+      "error": "Internal server error"
+    }
+
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 404
+    Received: 500
+
+       at ../src/support/assertions.ts:11
+
+       9 |
+      10 | export function expectStatus(res: ApiResult, expected: number): void {
+    > 11 |   expect(res.status, `Expected HTTP ${expected} per OpenAPI.\n${explain(res)}`).toBe(expected);
+         |                                                                                 ^
+      12 | }
+      13 |
+      14 | export function expectSchema(name: SchemaName, res: ApiResult): void {
+        at expectStatus (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:11:81)
+        at expectError (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:27:3)
+        at /Users/carlosveloz/Documents/Workspace/sdet-challenge/tests/users.delete.spec.ts:21:18
+
+    Error Context: ../test-results/users.delete-DELETE-env-us-73153-nger-retrievable-afterwards-prod/error-context.md
+]]>
+</failure>
+</testcase>
+<testcase name="DELETE /{env}/users/{email} › happy path › deleting twice returns 404 the second time" classname="users.delete.spec.ts" time="0.124">
+</testcase>
+<testcase name="DELETE /{env}/users/{email} › happy path › only the targeted user is removed" classname="users.delete.spec.ts" time="0.117">
+</testcase>
+<testcase name="DELETE /{env}/users/{email} › authentication (401) › rejects a request without the Authentication header" classname="users.delete.spec.ts" time="0.058">
+</testcase>
+<testcase name="DELETE /{env}/users/{email} › authentication (401) › rejects an invalid token" classname="users.delete.spec.ts" time="0.086">
+</testcase>
+<testcase name="DELETE /{env}/users/{email} › authentication (401) › rejects an empty token" classname="users.delete.spec.ts" time="0.05">
+</testcase>
+<testcase name="DELETE /{env}/users/{email} › authentication (401) › rejects a token with different casing" classname="users.delete.spec.ts" time="0.091">
+</testcase>
+<testcase name="DELETE /{env}/users/{email} › authentication (401) › rejects a valid token sent in the wrong header (Authorization)" classname="users.delete.spec.ts" time="0.043">
+</testcase>
+<testcase name="DELETE /{env}/users/{email} › authentication (401) › a rejected request does not delete the user" classname="users.delete.spec.ts" time="0.079">
+</testcase>
+<testcase name="DELETE /{env}/users/{email} › not found (404) › returns 404 for an unknown email with a valid token" classname="users.delete.spec.ts" time="0.02">
+</testcase>
+</testsuite>
+<testsuite name="users.get.spec.ts" timestamp="2026-10-08T18:13:43.815Z" hostname="prod" tests="5" failures="2" skipped="0" time="0.387" errors="0">
+<testcase name="GET /{env}/users/{email} › returns 200 and the requested user" classname="users.get.spec.ts" time="0.061">
+</testcase>
+<testcase name="GET /{env}/users/{email} › resolves emails containing &quot;+&quot; (URL-encoded)" classname="users.get.spec.ts" time="0.095">
+</testcase>
+<testcase name="GET /{env}/users/{email} › returns 404 with an ErrorResponse for an unknown email" classname="users.get.spec.ts" time="0.018">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/users.get-GET-env-users-em-5203a-sponse-for-an-unknown-email-prod/error-context.md]]
+]]>
+</system-out>
+<failure message="Expected HTTP 404 per OpenAPI." type="expect.toBe">
+<![CDATA[  [prod] › users.get.spec.ts:21:7 › GET /{env}/users/{email} › returns 404 with an ErrorResponse for an unknown email 
+
+    Error: Expected HTTP 404 per OpenAPI.
+    GET /prod/users/missing.6669146a-322%40example.com -> HTTP 500
+    Response body: {
+      "error": "Internal server error"
+    }
+
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 404
+    Received: 500
+
+       at ../src/support/assertions.ts:11
+
+       9 |
+      10 | export function expectStatus(res: ApiResult, expected: number): void {
+    > 11 |   expect(res.status, `Expected HTTP ${expected} per OpenAPI.\n${explain(res)}`).toBe(expected);
+         |                                                                                 ^
+      12 | }
+      13 |
+      14 | export function expectSchema(name: SchemaName, res: ApiResult): void {
+        at expectStatus (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:11:81)
+        at expectError (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:27:3)
+        at /Users/carlosveloz/Documents/Workspace/sdet-challenge/tests/users.get.spec.ts:22:16
+
+    Error Context: ../test-results/users.get-GET-env-users-em-5203a-sponse-for-an-unknown-email-prod/error-context.md
+]]>
+</failure>
+</testcase>
+<testcase name="GET /{env}/users/{email} › returns 404 for a deleted user" classname="users.get.spec.ts" time="0.105">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/users.get-GET-env-users-email-returns-404-for-a-deleted-user-prod/error-context.md]]
+]]>
+</system-out>
+<failure message="Expected HTTP 404 per OpenAPI." type="expect.toBe">
+<![CDATA[  [prod] › users.get.spec.ts:25:7 › GET /{env}/users/{email} › returns 404 for a deleted user ──────
+
+    Error: Expected HTTP 404 per OpenAPI.
+    GET /prod/users/qa.8896a739-365%40example.com -> HTTP 500
+    Response body: {
+      "error": "Internal server error"
+    }
+
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 404
+    Received: 500
+
+       at ../src/support/assertions.ts:11
+
+       9 |
+      10 | export function expectStatus(res: ApiResult, expected: number): void {
+    > 11 |   expect(res.status, `Expected HTTP ${expected} per OpenAPI.\n${explain(res)}`).toBe(expected);
+         |                                                                                 ^
+      12 | }
+      13 |
+      14 | export function expectSchema(name: SchemaName, res: ApiResult): void {
+        at expectStatus (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:11:81)
+        at expectError (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:27:3)
+        at /Users/carlosveloz/Documents/Workspace/sdet-challenge/tests/users.get.spec.ts:28:16
+
+    Error Context: ../test-results/users.get-GET-env-users-email-returns-404-for-a-deleted-user-prod/error-context.md
+]]>
+</failure>
+</testcase>
+<testcase name="GET /{env}/users/{email} › does not require authentication" classname="users.get.spec.ts" time="0.108">
+</testcase>
+</testsuite>
+<testsuite name="users.list.spec.ts" timestamp="2026-10-08T18:13:43.815Z" hostname="prod" tests="5" failures="1" skipped="0" time="0.398" errors="0">
+<testcase name="GET /{env}/users › returns 200 and a JSON array" classname="users.list.spec.ts" time="0.019">
+</testcase>
+<testcase name="GET /{env}/users › includes a newly created user" classname="users.list.spec.ts" time="0.098">
+</testcase>
+<testcase name="GET /{env}/users › does not include a deleted user" classname="users.list.spec.ts" time="0.108">
+</testcase>
+<testcase name="GET /{env}/users › reflects updates made via PUT" classname="users.list.spec.ts" time="0.145">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/users.list-GET-env-users-reflects-updates-made-via-PUT-prod/error-context.md]]
+]]>
+</system-out>
+<failure message="GET /prod/users -&gt; HTTP 200" type="expect.toContainEqual">
+<![CDATA[  [prod] › users.list.spec.ts:28:7 › GET /{env}/users › reflects updates made via PUT ──────────────
+
+    Error: GET /prod/users -> HTTP 200
+    Response body: [
+      {
+        "age": 30,
+        "email": "12345",
+        "name": "QA User c0d56b08-7de"
+      },
+      {
+        "age": 30,
+        "email": "qa.77d95d70-ae2@example.com",
+        "name": "QA User 77d95d70-ae2"
+      },
+      {
+        "age": 30,
+        "email": "qa.a9902e3f-d94@example.com",
+        "name": "QA User a9902e3f-d94"
+      },
+      {
+        "age": 30,
+        "email": "qa.a8540cf1-4d7@example.com",
+        "name": "QA User a8540cf1-4d7"
+      },
+      {
+        "age": 30,
+        "email": "qa.353ad4c3-9c9@example.com",
+        "name": "QA User 353ad4c3-9c9"
+      }
+    ]
+
+
+    expect(received).toContainEqual(expected) // deep equality
+
+    Expected value: {"age": 41, "email": "qa.77d95d70-ae2@example.com", "name": "Renamed User"}
+    Received array: [{"age": 30, "email": "12345", "name": "QA User c0d56b08-7de"}, {"age": 30, "email": "qa.77d95d70-ae2@example.com", "name": "QA User 77d95d70-ae2"}, {"age": 30, "email": "qa.a9902e3f-d94@example.com", "name": "QA User a9902e3f-d94"}, {"age": 30, "email": "qa.a8540cf1-4d7@example.com", "name": "QA User a8540cf1-4d7"}, {"age": 30, "email": "qa.353ad4c3-9c9@example.com", "name": "QA User 353ad4c3-9c9"}]
+
+      32 |
+      33 |     const res = await api.listUsers();
+    > 34 |     expect(res.body, explain(res)).toContainEqual(updated);
+         |                                    ^
+      35 |   });
+      36 |
+      37 |   test('does not require authentication', async ({ api }) => {
+        at /Users/carlosveloz/Documents/Workspace/sdet-challenge/tests/users.list.spec.ts:34:36
+
+    Error Context: ../test-results/users.list-GET-env-users-reflects-updates-made-via-PUT-prod/error-context.md
+]]>
+</failure>
+</testcase>
+<testcase name="GET /{env}/users › does not require authentication" classname="users.list.spec.ts" time="0.028">
+</testcase>
+</testsuite>
+<testsuite name="users.update.spec.ts" timestamp="2026-10-08T18:13:43.815Z" hostname="prod" tests="36" failures="7" skipped="0" time="2.927" errors="0">
+<testcase name="PUT /{env}/users/{email} › happy path › updates name and age, returning 200 with the updated resource" classname="users.update.spec.ts" time="0.131">
+</testcase>
+<testcase name="PUT /{env}/users/{email} › happy path › persists the update" classname="users.update.spec.ts" time="0.107">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/users.update-PUT-env-users-c4aa4-py-path-persists-the-update-prod/error-context.md]]
+]]>
+</system-out>
+<failure message="GET /prod/users/qa.a9902e3f-d94%40example.com -&gt; HTTP 200" type="expect.toEqual">
+<![CDATA[  [prod] › users.update.spec.ts:27:9 › PUT /{env}/users/{email} › happy path › persists the update ─
+
+    Error: GET /prod/users/qa.a9902e3f-d94%40example.com -> HTTP 200
+    Response body: {
+      "age": 30,
+      "email": "qa.a9902e3f-d94@example.com",
+      "name": "QA User a9902e3f-d94"
+    }
+
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 2
+    + Received  + 2
+
+      Object {
+    -   "age": 18,
+    +   "age": 30,
+        "email": "qa.a9902e3f-d94@example.com",
+    -   "name": "Persisted Name",
+    +   "name": "QA User a9902e3f-d94",
+      }
+
+      32 |       const fetched = await api.getUser(user.email);
+      33 |       expectStatus(fetched, 200);
+    > 34 |       expect(fetched.body, explain(fetched)).toEqual(updated);
+         |                                              ^
+      35 |     });
+      36 |
+      37 |     test('is idempotent: same payload twice returns 200 both times (no false 409)', async ({
+        at /Users/carlosveloz/Documents/Workspace/sdet-challenge/tests/users.update.spec.ts:34:46
+
+    Error Context: ../test-results/users.update-PUT-env-users-c4aa4-py-path-persists-the-update-prod/error-context.md
+]]>
+</failure>
+</testcase>
+<testcase name="PUT /{env}/users/{email} › happy path › is idempotent: same payload twice returns 200 both times (no false 409)" classname="users.update.spec.ts" time="0.106">
+</testcase>
+<testcase name="PUT /{env}/users/{email} › happy path › accepts boundary age 1" classname="users.update.spec.ts" time="0.081">
+</testcase>
+<testcase name="PUT /{env}/users/{email} › happy path › accepts boundary age 150" classname="users.update.spec.ts" time="0.071">
+</testcase>
+<testcase name="PUT /{env}/users/{email} › happy path › changing the email moves the user to the new email" classname="users.update.spec.ts" time="0.218">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/users.update-PUT-env-users-6fd20-s-the-user-to-the-new-email-prod/error-context.md]]
+]]>
+</system-out>
+<failure message="Expected HTTP 200 per OpenAPI." type="expect.toBe">
+<![CDATA[  [prod] › users.update.spec.ts:53:9 › PUT /{env}/users/{email} › happy path › changing the email moves the user to the new email 
+
+    Error: Expected HTTP 200 per OpenAPI.
+    GET /prod/users/qa.e99bc622-d13%40example.com -> HTTP 500
+    Response body: {
+      "error": "Internal server error"
+    }
+
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 500
+
+       at ../src/support/assertions.ts:11
+
+       9 |
+      10 | export function expectStatus(res: ApiResult, expected: number): void {
+    > 11 |   expect(res.status, `Expected HTTP ${expected} per OpenAPI.\n${explain(res)}`).toBe(expected);
+         |                                                                                 ^
+      12 | }
+      13 |
+      14 | export function expectSchema(name: SchemaName, res: ApiResult): void {
+        at expectStatus (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:11:81)
+        at /Users/carlosveloz/Documents/Workspace/sdet-challenge/tests/users.update.spec.ts:68:19
+
+    Error Context: ../test-results/users.update-PUT-env-users-6fd20-s-the-user-to-the-new-email-prod/error-context.md
+]]>
+</failure>
+</testcase>
+<testcase name="PUT /{env}/users/{email} › validation (400) › rejects age: zero (below minimum 1)" classname="users.update.spec.ts" time="0.065">
+</testcase>
+<testcase name="PUT /{env}/users/{email} › validation (400) › rejects age: negative" classname="users.update.spec.ts" time="0.067">
+</testcase>
+<testcase name="PUT /{env}/users/{email} › validation (400) › rejects age: 151 (above maximum 150)" classname="users.update.spec.ts" time="0.122">
+</testcase>
+<testcase name="PUT /{env}/users/{email} › validation (400) › rejects age: very large" classname="users.update.spec.ts" time="0.06">
+</testcase>
+<testcase name="PUT /{env}/users/{email} › validation (400) › rejects age: float" classname="users.update.spec.ts" time="0.103">
+</testcase>
+<testcase name="PUT /{env}/users/{email} › validation (400) › rejects age: numeric string" classname="users.update.spec.ts" time="0.069">
+</testcase>
+<testcase name="PUT /{env}/users/{email} › validation (400) › rejects age: non-numeric string" classname="users.update.spec.ts" time="0.067">
+</testcase>
+<testcase name="PUT /{env}/users/{email} › validation (400) › rejects age: null" classname="users.update.spec.ts" time="0.061">
+</testcase>
+<testcase name="PUT /{env}/users/{email} › validation (400) › rejects age: boolean" classname="users.update.spec.ts" time="0.096">
+</testcase>
+<testcase name="PUT /{env}/users/{email} › validation (400) › rejects email: missing domain (&quot;user@&quot;)" classname="users.update.spec.ts" time="0.069">
+</testcase>
+<testcase name="PUT /{env}/users/{email} › validation (400) › rejects email: missing &quot;@&quot; (&quot;user.domain.com&quot;)" classname="users.update.spec.ts" time="0.086">
+</testcase>
+<testcase name="PUT /{env}/users/{email} › validation (400) › rejects email: missing local part" classname="users.update.spec.ts" time="0.092">
+</testcase>
+<testcase name="PUT /{env}/users/{email} › validation (400) › rejects email: double &quot;@&quot;" classname="users.update.spec.ts" time="0.137">
+</testcase>
+<testcase name="PUT /{env}/users/{email} › validation (400) › rejects email: contains whitespace" classname="users.update.spec.ts" time="0.135">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/users.update-PUT-env-users-1160c-s-email-contains-whitespace-prod/error-context.md]]
+]]>
+</system-out>
+<failure message="Expected HTTP 400 per OpenAPI." type="expect.toBe">
+<![CDATA[  [prod] › users.update.spec.ts:82:11 › PUT /{env}/users/{email} › validation (400) › rejects email: contains whitespace 
+
+    Error: Expected HTTP 400 per OpenAPI.
+    PUT /prod/users/qa.9ca07c6c-aee%40example.com -> HTTP 200
+    Response body: {
+      "age": 30,
+      "email": "us er@example.com",
+      "name": "QA User 9ca07c6c-aee"
+    }
+
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 400
+    Received: 200
+
+       at ../src/support/assertions.ts:11
+
+       9 |
+      10 | export function expectStatus(res: ApiResult, expected: number): void {
+    > 11 |   expect(res.status, `Expected HTTP ${expected} per OpenAPI.\n${explain(res)}`).toBe(expected);
+         |                                                                                 ^
+      12 | }
+      13 |
+      14 | export function expectSchema(name: SchemaName, res: ApiResult): void {
+        at expectStatus (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:11:81)
+        at expectError (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:27:3)
+        at /Users/carlosveloz/Documents/Workspace/sdet-challenge/tests/users.update.spec.ts:84:20
+
+    Error Context: ../test-results/users.update-PUT-env-users-1160c-s-email-contains-whitespace-prod/error-context.md
+]]>
+</failure>
+</testcase>
+<testcase name="PUT /{env}/users/{email} › validation (400) › rejects email: empty string" classname="users.update.spec.ts" time="0.086">
+</testcase>
+<testcase name="PUT /{env}/users/{email} › validation (400) › rejects email: number" classname="users.update.spec.ts" time="0.066">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/users.update-PUT-env-users-262d6-on-400-rejects-email-number-prod/error-context.md]]
+]]>
+</system-out>
+<failure message="Expected HTTP 400 per OpenAPI." type="expect.toBe">
+<![CDATA[  [prod] › users.update.spec.ts:82:11 › PUT /{env}/users/{email} › validation (400) › rejects email: number 
+
+    Error: Expected HTTP 400 per OpenAPI.
+    PUT /prod/users/qa.00fe3f03-061%40example.com -> HTTP 500
+    Response body: {
+      "error": "Internal server error"
+    }
+
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 400
+    Received: 500
+
+       at ../src/support/assertions.ts:11
+
+       9 |
+      10 | export function expectStatus(res: ApiResult, expected: number): void {
+    > 11 |   expect(res.status, `Expected HTTP ${expected} per OpenAPI.\n${explain(res)}`).toBe(expected);
+         |                                                                                 ^
+      12 | }
+      13 |
+      14 | export function expectSchema(name: SchemaName, res: ApiResult): void {
+        at expectStatus (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:11:81)
+        at expectError (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:27:3)
+        at /Users/carlosveloz/Documents/Workspace/sdet-challenge/tests/users.update.spec.ts:84:20
+
+    Error Context: ../test-results/users.update-PUT-env-users-262d6-on-400-rejects-email-number-prod/error-context.md
+]]>
+</failure>
+</testcase>
+<testcase name="PUT /{env}/users/{email} › validation (400) › rejects email: null" classname="users.update.spec.ts" time="0.075">
+</testcase>
+<testcase name="PUT /{env}/users/{email} › validation (400) › rejects name: number" classname="users.update.spec.ts" time="0.056">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/users.update-PUT-env-users-397e6-ion-400-rejects-name-number-prod/error-context.md]]
+]]>
+</system-out>
+<failure message="Expected HTTP 400 per OpenAPI." type="expect.toBe">
+<![CDATA[  [prod] › users.update.spec.ts:89:11 › PUT /{env}/users/{email} › validation (400) › rejects name: number 
+
+    Error: Expected HTTP 400 per OpenAPI.
+    PUT /prod/users/qa.a8ccdae5-8a1%40example.com -> HTTP 200
+    Response body: {
+      "age": 30,
+      "email": "qa.a8ccdae5-8a1@example.com",
+      "name": 123
+    }
+
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 400
+    Received: 200
+
+       at ../src/support/assertions.ts:11
+
+       9 |
+      10 | export function expectStatus(res: ApiResult, expected: number): void {
+    > 11 |   expect(res.status, `Expected HTTP ${expected} per OpenAPI.\n${explain(res)}`).toBe(expected);
+         |                                                                                 ^
+      12 | }
+      13 |
+      14 | export function expectSchema(name: SchemaName, res: ApiResult): void {
+        at expectStatus (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:11:81)
+        at expectError (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:27:3)
+        at /Users/carlosveloz/Documents/Workspace/sdet-challenge/tests/users.update.spec.ts:91:20
+
+    Error Context: ../test-results/users.update-PUT-env-users-397e6-ion-400-rejects-name-number-prod/error-context.md
+]]>
+</failure>
+</testcase>
+<testcase name="PUT /{env}/users/{email} › validation (400) › rejects name: null" classname="users.update.spec.ts" time="0.048">
+</testcase>
+<testcase name="PUT /{env}/users/{email} › validation (400) › rejects name: boolean" classname="users.update.spec.ts" time="0.067">
+</testcase>
+<testcase name="PUT /{env}/users/{email} › validation (400) › rejects name: object" classname="users.update.spec.ts" time="0.072">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/users.update-PUT-env-users-65b21-ion-400-rejects-name-object-prod/error-context.md]]
+]]>
+</system-out>
+<failure message="Expected HTTP 400 per OpenAPI." type="expect.toBe">
+<![CDATA[  [prod] › users.update.spec.ts:89:11 › PUT /{env}/users/{email} › validation (400) › rejects name: object 
+
+    Error: Expected HTTP 400 per OpenAPI.
+    PUT /prod/users/qa.62d8f1bd-513%40example.com -> HTTP 500
+    Response body: {
+      "error": "Internal server error"
+    }
+
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 400
+    Received: 500
+
+       at ../src/support/assertions.ts:11
+
+       9 |
+      10 | export function expectStatus(res: ApiResult, expected: number): void {
+    > 11 |   expect(res.status, `Expected HTTP ${expected} per OpenAPI.\n${explain(res)}`).toBe(expected);
+         |                                                                                 ^
+      12 | }
+      13 |
+      14 | export function expectSchema(name: SchemaName, res: ApiResult): void {
+        at expectStatus (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:11:81)
+        at expectError (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:27:3)
+        at /Users/carlosveloz/Documents/Workspace/sdet-challenge/tests/users.update.spec.ts:91:20
+
+    Error Context: ../test-results/users.update-PUT-env-users-65b21-ion-400-rejects-name-object-prod/error-context.md
+]]>
+</failure>
+</testcase>
+<testcase name="PUT /{env}/users/{email} › validation (400) › rejects a body without &quot;name&quot;" classname="users.update.spec.ts" time="0.069">
+</testcase>
+<testcase name="PUT /{env}/users/{email} › validation (400) › rejects a body without &quot;email&quot;" classname="users.update.spec.ts" time="0.055">
+</testcase>
+<testcase name="PUT /{env}/users/{email} › validation (400) › rejects a body without &quot;age&quot;" classname="users.update.spec.ts" time="0.091">
+</testcase>
+<testcase name="PUT /{env}/users/{email} › validation (400) › rejects an empty object" classname="users.update.spec.ts" time="0.054">
+</testcase>
+<testcase name="PUT /{env}/users/{email} › validation (400) › leaves the stored user unchanged after a rejected update" classname="users.update.spec.ts" time="0.057">
+</testcase>
+<testcase name="PUT /{env}/users/{email} › not found (404) › returns 404 when the user does not exist" classname="users.update.spec.ts" time="0.032">
+</testcase>
+<testcase name="PUT /{env}/users/{email} › not found (404) › does not create the user as a side effect" classname="users.update.spec.ts" time="0.038">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/users.update-PUT-env-users-a4011-e-the-user-as-a-side-effect-prod/error-context.md]]
+]]>
+</system-out>
+<failure message="Expected HTTP 404 per OpenAPI." type="expect.toBe">
+<![CDATA[  [prod] › users.update.spec.ts:124:9 › PUT /{env}/users/{email} › not found (404) › does not create the user as a side effect 
+
+    Error: Expected HTTP 404 per OpenAPI.
+    GET /prod/users/missing.fe3dfecb-a72%40example.com -> HTTP 500
+    Response body: {
+      "error": "Internal server error"
+    }
+
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 404
+    Received: 500
+
+       at ../src/support/assertions.ts:11
+
+       9 |
+      10 | export function expectStatus(res: ApiResult, expected: number): void {
+    > 11 |   expect(res.status, `Expected HTTP ${expected} per OpenAPI.\n${explain(res)}`).toBe(expected);
+         |                                                                                 ^
+      12 | }
+      13 |
+      14 | export function expectSchema(name: SchemaName, res: ApiResult): void {
+        at expectStatus (/Users/carlosveloz/Documents/Workspace/sdet-challenge/src/support/assertions.ts:11:81)
+        at /Users/carlosveloz/Documents/Workspace/sdet-challenge/tests/users.update.spec.ts:127:19
+
+    Error Context: ../test-results/users.update-PUT-env-users-a4011-e-the-user-as-a-side-effect-prod/error-context.md
+]]>
+</failure>
+</testcase>
+<testcase name="PUT /{env}/users/{email} › duplicates (409) › rejects changing the email to one that already exists" classname="users.update.spec.ts" time="0.051">
+</testcase>
+<testcase name="PUT /{env}/users/{email} › duplicates (409) › keeps both users untouched after a rejected email change" classname="users.update.spec.ts" time="0.067">
+</testcase>
+</testsuite>
+</testsuites>

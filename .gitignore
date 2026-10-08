@@ -1,0 +1,6 @@
+node_modules/
+test-results/
+.env
+.DS_Store
+# NOTE: playwright-report/ and reports/ are intentionally NOT ignored so that a
+# sample run can be committed as the "testing report" deliverable.
